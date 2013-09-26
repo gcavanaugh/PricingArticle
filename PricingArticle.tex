@@ -1,0 +1,446 @@
+\documentclass{article}
+
+%\geometry{showframe}% for debugging purposes -- displays the margins
+
+\usepackage{amsmath}
+
+% Set up the images/graphics package
+\usepackage{graphicx}
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+\title{Pricing ENSO Derivatives}
+\author{Grant Cavanaugh, Ph.D.\\
+	Benjamin Collier, Ph.D.\\
+	University of Pennsylvania}
+\date{}  % if the \date{} command is left out, the current date will be used
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+%Prints a degree symbol
+\newcommand{\degreesym}{\ensuremath{^\circ}}
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+
+\section{Core themes/ideas}
+\subsection{Introduction}
+\begin{itemize}
+\item Existing traded markets don't hedge climate risk directly
+\item Climate could be managed through non-traded markets (e.g. insurance) but there are utility to trading
+\end{itemize}
+
+\subsection{Body}
+\begin{itemize}
+\item Introduce a tool that is necessary but not sufficient to start the first direct climate markets
+\item Pricing financial products around uncertainty in climate forecasts
+\item Does information about ENSO change sufficiently to warrant trading?
+\item Considering modeling advantages and identification of mispricing
+\item  Positive externality – better climate models
+\end{itemize}
+
+\section{Changes/Additions from dissertation chapter}
+\begin{itemize}
+\item report bandwidth on kernel
+\item use MLE algorithm for fitting distributions (unless specific reason to do otherwise)
+\item motivation on normal 
+\item consider using color gradient on the red and blue bands on the payout graph 
+\item change the month scale (?)
+\item 3.11 consider rounding 
+\item one st dev with number in parens
+\item move 3.14 up into distb section
+\item define neff and Rhat for tab 3.2
+\item can we say something about the the complexity of the problem and it's implication of the pricing?
+\end{itemize}
+
+\section{Introduction}
+
+\subsection{~ 1 page summary of paper}
+
+\subsection{Large unmanaged risk related to climate (status quo)}
+Climate risk is a growing concern for hedgers across the globe. 
+
+DISSREF estimates El Ni\~no/La Ni\~na's economic cost of this teleconnection, finding:
+\begin{itemize} 
+\item ENSO risk is large enough in absolute terms to justify formal risk markets;
+\item large pools of ENSO risk offset one another in time and space, suggesting that ENSO markets could sustain balanced, direct trading among hedgers; and 
+\item ENSO creates a pool of economic risk that is comparable to those underlying some large futures markets today.
+\end{itemize}
+
+\subsection{Short-comings of existing schemes for managing climate risk}
+Yet, those hedgers have never had the opportunity to manage that risk on exchange traded derivatives markets. 
+
+\subsubsection{Policy markets}
+There are markets covering the policy response to climate change, like those on emissions permits. But those markets focus on the policy response to climate change, not climate change per se. The EU's emissions-trading system (ETS), the legally binding system underpinning the largest carbon trading system on the planet, recently provided a jarring reminder of that distinction. On April 16, 2013 the European Parliament voted against proposals that would have altered the scheduled for issuing emissions permits under the ETS. That day, the price of EU carbon permits fell 40 percent \cite{econ2013ETS}. [ADD IN LINE ABOUT BASIS AND DEFINE BASIS]
+
+\subsubsection{Weather != climate}
+Of course, there are exchange-traded weather indexes. But it is difficult to see global scale changes in climate patterns just looking at the individual cities and regions those markets cover. Indeed, because those markets are so localized they miss the chance to attract liquidity from the diverse groups of hedgers that face dire consequences from changing weather patterns across the planet. That limited scale may explain some of their struggle to establish liquidity. 
+
+\subsubsection{Climate linked business indexes}
+One possible alternative
+For example, the stocks price of reinsurers, companies with direct downside risk from extreme cliamte events, tend to be driven as much by their investing returns as by their climate linked losses\cite{kurtov2010investing}. 
+
+
+
+\subsection{Geophysical indexes as an atlernative}
+We need something actually linked to the climate.
+
+An index where:
+\begin{itemize}
+\item The index has mmediate consequences
+\item Genuine uncertainty - Some risks too certain for hedging (rising sea levels)
+\item Error around estimates can be quantified (vs. IPCC, ``very likely'')
+\item Models verifiable
+\end{itemize}
+
+This rules out many geophysical indexes but...
+\paragraph{Teleconnections}
+Instead, there is a need for true climate markets.
+Teleconnections are great candidates to provide what existing markets don't.
+Example of what climate scientists call “teleconnections.” Teleconnections refer to the statistical and physical links between regional anomalies in the ocean and atmosphere and patterns of weather around the world.
+
+\paragraph{El Ni\~no/La Ni\~na}
+The most famous teleconnection involves El Ni\~no/La Ni\~na, a shift in ocean temperatures (and atmospheric pressure) in the Pacific Ocean that wreaks havoc on agricultural and energy markets and occasionally causes outright humanitarian crises in South America, Southeast Asia, and Australia.
+
+\subparagraph{El Ni\~no is climate change as we experience it}
+Nature paper on ENSO and climate change (there seems to be a link)
+
+\subparagraph{And it is big}
+DISSREF
+Flood and epidemics on South America's Pacific Coast – as discussed above South America hosts the most devastating impacts of the El Ni\~no/La Ni\~na. Based on my statistical analysis of disaster costs over the last half century, I estimate that an extreme El Ni\~no (of which there have been 3 or 4 in the last century) causes median economic damages across the region of USD 3.4b.
+
+Flooding in Pacific Asia and Oceania - This impact is generally associated with La Ni\~na and has caused headline-grabbing destruction in recent years. I estimate that the expected impact of a La La Ni\~na event of the same magnitude as that of 1988, (of which we’ve had two since 1970) causes regional damages of more more than USD$8$b in absolute damages. This may be an underestimate however, given that official Australian figures for the economic damage from the 2010 La Ni\~na, which was not particularly catastrophic by historical standards, were roughly USD 12.5 billion. 
+
+\paragraph{Cite literature on El Ni\~no and La Ni\~na consequences (extra benefit is that much is in developing and emerging economies)}
+
+\subsection{Introducing the potential for El Ni\~no/La Ni\~na}
+The best indicator that indexes of El Ni\~no/La Ni\~na are ready for exchange-trading is that one is already being used to settle a formal risk management.
+
+In 2011, Caja Nuestra Gente, a large microfinance bank in Peru, purchased index-based insurance to protect its loan portfolio against defaults after catastrophic El Ni\~no flooding.  That insurance was developed by GlobalAgRisk, a research group led by University of Kentucky professor, Jerry Skees, with support from the Gates Foundation. 
+
+Ninety-five percent of the risk on the policy went to international reinsurer PartnerRe and five percent was held by the Peruvian insurer, La Positiva. 
+
+Payment on GlobalAgRisk’s El Ni\~no insurance is based solely off the sea-surface temperature, as measured by the US's National Oceanic and Atmospheric Administration (NOAA) over defined regions off the coast of Peru. Sharp rises in that temperature, particularly in the months of November through January, define the El Ni\~no phenomenon and are the cause of catastrophic flooding in Peru. (The opposite is true in La Ni\~na years – with the same index showing colder than normal temperatures which cause flooding on the other side of the Pacific in Australia and Southeast Asia.)
+
+\subsection{If we already have insurance, why do we need traded markets?}
+\begin{itemize}
+\item Better for asymmetric information
+  \subitem Does not require early closing date
+  \subitem Can better integrate multiyear trends
+  \subitem Can integrate information on climate change
+\item Provision of public information
+\item Maximiing welfare through lower cost of risk transfer
+  \subitem Direct risk transfer
+  \subitem Lower barriers to entry for motivated speculators
+\end{itemize}
+
+\subsubsection{(Better for asymmetric information) Limitations of insurance}markets when forecasting is possible, closing windows will only get longer over time
+The biggest advantage of moving an El Ni\~no/La Ni\~na index to futures and options-on futures involves dynamic pricing of the underlying index. Currently, the sales closing date for the insurance is a full year before the period of coverage – meaning that a firm looking for coverage during the 2013 El Ni\~no season will need to choose whether or not to buy by then end of January 2013. 
+
+This schedule avoids the adverse selection problems created by El Ni\~no forecasts, which are improving incrementally every year and open up the possibility of opportunistic purchases – with the sophisticated buyers only buying coverage in years where they think an extreme El Ni\~no is likely. Indeed, in the first year that GlobalAgRisk’s El Ni\~no insurance was on sale, a large fishing company expressed interest in purchasing coverage, but requested additional time, beyond the original sales closing date, to make a final decision. In those critical weeks, new forecasts did come out suggesting El Ni\~no was less likely. While it is difficult to directly link the fishing company's subsequent decision not to purchase coverage to those forecasts, the experience provided a stark reminder of the adverse selection problems inherent to insurance based on a forecast-able index. In the following year, the sales closing date was moved to January. 
+
+The lag between paying for and receiving coverage under GlobalAgRisk’s El Ni\~no insurance increases the opportunity cost of hedging and means that the market is unlikely to attract the attention of risk managers with shorter planning horizons. These are problem that would be avoided altogether in exchange-traded markets, where prices are free to move as new forecast information becomes available.
+
+\subsubsection{(Provision of public information) Traded markets (securities or derivatives) would increase social gains by providing excellent forecasts} 
+
+The knock-on effect of dynamic pricing would be better public and private decisions related to this key climate phenomenon. Exchange-traded El Ni\~no/La Ni\~na derivatives would provide public information not just about the price of risk protection but also about the likelihood of extreme El Ni\~no/La Ni\~na events. Currently decision makers (particularly in Peru) have to grapple with many competing El Ni\~no/La Ni\~na forecasts, often built using different datasets and methodologies. 
+
+International Research Institutes for Climate and Society run by Columbia University and NOAA provides a running tally of the forecasts of the best El Ni\~no/La Ni\~na models from academia and national meteorological services. One look at that graph makes clear the need for the definitive consensus forecast that derivatives markets would provide. Without that touchstone newspapers and politicians in the most effected countries (Peru and Australia in particular) have often leaned heavily on alarmist forecasts - creating El Ni\~no fatigue among ordinary citizens and policy makers.
+
+\subsubsection{(Maximing welfare through lower cost of risk transfer) Two-sided markets lead to lower prices for risk transfer, maximizing utility}
+Finally, El Ni\~no/La Ni\~na is well suited to exchange-traded derivatives markets [INSERT COMMENT EXPLAINING BALANCED HEDGING INTEREST ON A TWO SIDED MARKET] because it would facilitate the direct transfer of risk among a diverse collection of hedgers across the world. El Ni\~no/La Ni\~na affects many regions of the globe and within each high-risk region some industries benefit from extreme events (such as reinsurers who historically face fewer losses thanks to suppressed hurricane activity during extreme El Ni\~no) while others suffer. Direct risk trades between those groups would contribute to price discovery and provide sustainable liquidity.
+
+\paragraph{Cite negative relationship with hurricanes}
+Great deal of competition driving prices lower, if they are allowed to entry.
+Holders of hurricane risk likely to remain speculators because ENSO is not a perfect hedge 
+But good portfolio effects (even if it's not included as a hedge)
+
+\subsection{Considerations regarding feasibility of a traded market - The paradox of liquidity}
+Important research question: Does information about ENSO change sufficiently frequently to warrant trading? Beyond what we can tackle here.
+
+\subsubsection{Pricing tools important for catalyzing the emergence of new markets
+We provide the first stab at those tools here}
+
+Baseline index pricing lowers transaction costs for entering the market
+
+Reduces asymmetric information and price volatility
+
+Increases confidence in market
+
+\paragraph{Implications of no traditional arbitrage}
+Evidence from other derivatives (HDD, et)
+
+\subsubsection{Once we have this data we can ask additional questions whose answers will indicate the likelihood of reaching sustainable liquidity?}
+
+\paragraph{Is there meaningful informational change?}
+If information doesn't change, dynamic pricing not needed and insurance markets suffice (despite their limitations)
+
+\paragraph{Are there opportunities to identify mispricing?}
+
+
+\section{Methods: Understanding ENSO, information and pricing}
+
+\subsection{Data considerations, identifying an index}
+Need to pick:
+\begin{itemize}
+\item Methodology
+\item Region
+\item Absolute or anomalies (not so important here)
+\end{itemize}
+
+\subsubsection{ERSST vs. OISST}
+
+NOAA publishes two primary sea surface temperate indexes. By and large, those indexes tell the same story about El Ni\~no/La Ni\~na.
+
+NOAA's Extended Reconstructed Sea Surface Temperature Index (ERSST) dataset provides a longer record, while NOAA's Optimum Interpolation Sea Surface Temperature Index (OISST) offers finer resolution. 
+
+The key factor distinguishing ERSST from OISST is the use of in-situ and satellite data. With the exception of version 3 [footnote ERRST version 3 included infrared satellite data starting in 1985. NOAA determined that this addition introduced some biases into the index - it tended to suggest temperatures that were too cold by a factor of .01 deg C. NOAA consequently removed satellite data (although it retains in situ data collected via satellite) from the calculation of ERSST version 3b, the current standard.], all the ERSST iterations (1,2, and 3b, the iteration used here) use in-situ measurement exclusively\cite{smith2004improved}\cite{smith2003extended}\cite{smith2008improvements}.
+
+Monthly anomalies in the ERSST version 3b index are measured relative to a 1971-2000 base period\cite{xue2003interdecadal}. NOAA releases monthly ERSST estimates with a resolution of two degrees across the four ENSO regions. While the primary index record that NOAA posts to its websites goes back to 1950, monthly ERSST data are available from 1854 on.
+
+OISST, currently at version 2, combines in situ SST measurements, daytime and nighttime satellite data readings, and data from sea ice cover simulations. The satellite data is adjusted statistically for natural sources of bias, like cloud cover and atmospheric water vapor\cite{reynolds2002improved} \cite{reynolds1994improved} \cite{reynolds1993improved} \cite{reynolds1988real}. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/CompareOISSTandERRSTbaselines}
+  \caption{Comparing OISST and ERSST monthly baselines}
+   \label{fig:baeslinesOIER}
+\end{figure*}
+
+Figure \ref{fig:baeslinesOIER} provides the baseline monthly values that NOAA uses to calibrate anomalies in OISST and ERSST. Note OISSTs tendency toward colder SSTs. The cold bias in satellite data is a great concern in the climate literature and is noted in all the index construction papers on ERSST and OISST cited above.
+
+Note also that February/March and June/July are inflection periods, moving both indexes from cold to warm phases (the former months) and back (the latter months). The baseline SST fluctuations over these two windows is dramatic. I suspect that those months will consequently host very active trading, if traded ENSO markets launch. Those are also likely to be the months where climate expertise and proprietary data will provide the largest edge to traders. The possibility of information asymmetries in those months may undermine the volume boost that traded markets might otherwise get from increased volatility. \index{sea-surface temperature!phases}
+
+\paragraph{Result}
+ERSST
+
+\subsubsection{Ni\~no region}
+Ni\~no 1.2 is the best predictor of catastrophic flooding in Peru and Ecuador, El Ni\~no's flagship impact. However, NMS generally mark ENSO anomalies using the Ni\~no 3.4 region\footnote{Ni\~no 3.4, straddles two separate regions, Ni\~no 3 and Ni\~no 4.} (roughly, from $5\degreesym$N to $5\degreesym$S and from $120\degreesym$ to $170\degreesym$W), which stretches across the central Pacific\cite{khalil2007Nino} \cite{barnston1997documentation}. Both regions, Ni\~no 1.2 and the Ni\~no 3.4, have a very high correlation during extreme anomalies. But Ni\~no 3.4 is generally considered a better proxy for the worldwide teleconnections associated with ENSO. In particular,  it does a better job capturing ENSO anomalies with different geographic signatures. During the 1972/1973 El Ni\~no, for example, most of the sea-surface temperature warming occurred in the central Pacific, closer to Ni\~no 3.4. El Ni\~no events focused on the Central Pacific are also called \emph{Modoki} Ni\~nos and can have large global impacts\cite{ashok2007Nino}.
+
+\paragraph{Result}
+use Ni\~no 3.4…
+
+\subsubsection{Anomalies vs. absolute SST measurements}
+NOAA releases each of its datasets as departures from monthly averages (anomalies) and absolute degrees Celsius. Its not immediately clear which format is better for financial contracts.
+
+Presenting contracts in terms of anomalies facilitates interpretation of actual El Ni\~no/La Ni\~na events, since most major meteorological organizations define those events in terms of persistent monthly anomalies. Indeed, many forecasts of SSTs (like those from the ABM and IRI) are only provided in terms of anomalies. 
+
+The primary disadvantage of anomalies is that they have been, and will continue to be, subject to revision as underlying SSTs drift over time. 
+
+[THERE IS] a possible [BUT WEAK] link between climate change and higher Pacific SSTs. 
+
+To the extent that such trends continue, the index may revise its baseline and the interpretation of anomalies may become less clear. The ONI index, which NOAA uses to define El Ni\~no/La Ni\~na already uses a rolling window for its monthly base periods.
+
+The weather traders I interviewed [give context] suggested that the temperature derivatives are currently subject to annual revision. The practice has not been a problem for traders. Nevertheless, there may be advantages to using absolute SSTs. Absolute measurements will directly incorporate any underlying shifts in the index, allowing, for example, traders to simply express theories about the long-term trends in the index. Those theories and, by proxy, the market's judgment of long-term climate change might be obscured in an anomaly-based contract.
+
+\subsection{Developing a prototypical contract}
+According to Dr. Andrew Watkins of the Australian Bureau of Meteorology (ABM), October is the single most decisive month for El Ni\~no/La Ni\~na worldwide. It is consequently the month I use for most of the examples in this chapter.
+
+
+I am most concerned with extreme El Ni\~no/La Ni\~na, so I've chosen to structure the payout functions for my example options around events between one and three standard deviations away from the monthly mean. More specifically, payments on the options begin at one standard deviation\footnote{This is also called the trigger or attachment point.} above or below the monthly average (for El Ni\~no coverage/calls and La Ni\~na coverage/puts respectively) and payments reach one hundred percent of the notional value (or sum insured) at three standard deviations above or below the monthly average. Figure \ref{fig:optionParamsByMonth} shows the average monthly value for Ni\~no 3.4 in black. The red and blue bands show the index values for each month that would trigger a payment on calls and puts respectively. \index{risk management contracts!payout function}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/optionParamsByMonth}
+  \caption{Index values for El Ni\~no (red) and La Ni\~na (blue) events between one and three standard deviations away from monthly average}
+   \label{fig:optionParamsByMonth}
+\end{figure*}
+
+Within those ranges, I use linear pricing such that an index value halfway across the red band in figure \ref{fig:optionParamsByMonth} (i.e. halfway between the the trigger and max payout point) would obligate a payout that is half of the sum insured on a call/El Ni\~no contract. The full linear function for October El Ni\~no is shown in figure \ref{fig:payouyt10callex}. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/payoutExamplemonth10contractType1}
+  \caption{Payout function for call option on October SST for Ni\~no 3.4 ERSST.3b covering index values between one and three standard deviations above the baseline}
+   \label{fig:payouyt10callex}
+\end{figure*}
+
+As an example, suppose that I bought USD $100$ of coverage for USD $10$ against October El Ni\~no. If actual October SST was halfway across the red band, or $28.74^{\circ}\mathrm{C}$, I would receive USD $50$.
+
+In practice, GlobalAgRisk found that hedgers (and speculators) prefer a payout function that offers a minimum payout in the event that the index reaches just above the trigger. For example, an index value that just barely crosses into the red in \ref{fig:optionParamsByMonth} might trigger a payout of $5$ percent on an El Ni\~no/call contract, rather than the tiny payout suggested the kind of linear function in figure \ref{fig:payouyt10callex}.
+
+Some potential clients also expressed interest in a more customized payout function consisting of steps usually shaped around historical events e.g. a 25 percent payout for the 1972/1973 magnitude event and a 75 percent for a 1997/1998 magnitude event.
+\subsubsection{Result}
+suggest 1-3 s.d. coverage, put and call
+
+\subsection{Distribution}
+
+In figure \ref{fig:optionPricesWithVariousDistMonth}, I show the prices generated (in USD of premium per USD 100 of nominal coverage) from the random samples from fit distributions. The figure includes burn prices and prices from samples taken from kernel density smoothers fit over each month. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/optionPricesWithVariousDistMonth}
+  \caption{Expected price for options on Ni\~no 3.4 by month, based on simulations from various distributions}
+   \label{fig:optionPricesWithVariousDistMonth}
+\end{figure*}
+
+The prices from the various distributions are, with one prominent exception, close together. On the El Ni\~no side, the highest and lowest prices are mostly within 125 basis points of one another in any given month. On the La Ni\~na side, that spread is slightly larger at roughly 150 basis point, but only between April and June.
+
+The Weibull, is the one model challenging this consensus. The prices from the Weibull samples are clearly distinct from the rest of the group - almost doubling the price of La Ni\~na coverage relative to the rest of the group. The Weibull sample suggested the lowest prices for El Ni\~no coverage, albeit by a much smaller margin than for La Ni\~na. That is understandable given the distribution's heavy left tail.
+
+Apart from the Weibull, the samples drawn from the kernel density smoother suggests the second highest prices for both El Ni\~no and La Ni\~na coverage. The burn prices are in the middle of the pack.
+\subsubsection{Result}
+robust to several distributional assumptions. 
+Using normal has advantages
+
+\subsection{Picking a forecast}
+Forecasts, IRI’s ensemble, and error around the ensemble forecast
+\subsubsection{Result 1}
+IRI ensemble good foundation for baseline
+
+\subsection{Pricing ensemble error}
+
+Extreme El Ni\~no/La Ni\~na events emerge over time, with forecasts giving us even more useful hints in the months leading up to a given event. As those hints emerge, we change our beliefs around the likelihood of an event. The price of El Ni\~no/La Ni\~na risk protection should change to reflect those beliefs.
+
+In this section, I present pricing analysis conditioned on SST forecasts released by Colombia University's International Research Institute for Climate and Society (IRI). Every month since mid-2002, IRI has collected forecasts issued by major centers of climatological research. Figure \ref{fig:forecastExamples} shows IRI the forecasts as of March 2013.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/SST_table_march_ex}
+  \caption{Example of IRI's collected forecasts - March 2013}
+   \label{fig:forecastExamples}
+\end{figure}
+
+I link forecasts and observed SSTs through a Bayesian regression that uses the long terms climate record as a prior. If the regression indicates that the forecasts have no predictive power, then all the simulated SSTs from the regression will simply reflect monthly historical averages. 
+
+\subsubsection{Modeling the link between forecasts and SSTs}
+
+As an example, imagine that it is March and I am interested in predicting October Ni\~no 3.4 SST. IRI's forecasts (given in terms of anomalies) are smoothed using three-month blocks, as in figure \ref{fig:forecastExamples}. In that figure, there are three forecasts that contain information relevant to October SSTs - \emph{ASO}, \emph{SON}, and \emph{OND}. 
+
+There are myriad ways of combining both individual and average forecasts for those three windows in a regression, but in this section I use as my predictive variable the IRI model average. So, in the above example, I would look at all the model averages made in March for \emph{ASO}, \emph{SON}, and \emph{OND}, taking the average of those three numbers in any given year. I did the same for every month across that months valuable forecasts. That forecast average then conditions the long-term average anomaly for October\footnote{I used anomalies rather than absolute SSTs to match IRI's convention.}. IRI issues forecasts between 2 and 10 months prior to any given target month. For example, October SST forecasts begin in December and end in September. Since I want pricing for every month, from the vantage-point of every preceding month with IRI forecasts, I need to run a total of $108$ separate regressions. 
+
+\begin{equation}
+\begin{array}{lcl}
+\mbox{Monthly Ni\~no 3.4 ERSST.3b anomalies}_{month,year} & \sim & \mathcal{N}( \hat{y}_{month,forecast month,year}, \sigma_{y_{month,forecast month}}^2 )\\
+\hat{y}_{month,forecast month,year} & = & a_{month,forecast month} \\
+&& + b_{month,forecast month}*\\
+&& \mbox{average of IRI average forecasts}_{month,forecast month}\\
+\end{array}
+\label{eqn:conditionalEstEqn}
+\end{equation}
+
+Those regressions, specified in equation \ref{eqn:conditionalEstEqn}, are a simplified version of a procedure that climate scientists and statisticians have recently used to merge ENSO forecasts\cite{luo2007bayesian}\cite{coelho2004forecast}. Note first that I do not know the predictive power of IRI average forecasts. The parameter $\sigma_{y_{month,forecast month}}^2$ accounts for that forecasting uncertainty. It will be large where IRI average forecasts have shown low historical predictive power. Note also that this Bayesian regression will not be biased by non-stationarity. The underlying parameters are not assumed to be stationary, since they are realizations of an unknown distribution.
+
+The prior probabilities I placed on model parameters are shown in equation set \ref{eqn:priorsconditionalEstEqn}. There are weakly informative priors on $b$ and $\sigma_{y}$, allowing them to move easily across a wide range of possible values in response to the data. $a$ by contrast has a strongly informative prior based on historical data. This means that if $b$, the parameter indicating the predictive power of IRI's average forecasts, is at or near zero, then the resulting simulations from the posterior distribution will simply reflect long term trends in monthly SSTs.
+
+\begin{equation}
+\begin{array}{lcl}
+a_{month,forecast month}  & \sim & \mathcal{N}(\mbox{mean anomalies}_{month}, \mbox{st dev anomalies}_{month}) \\
+b_{month,forecast month}  & \sim & \mathcal{N}(0, 100) \\
+\sigma_{y_{month,forecast month}}^2 & \sim  &\mbox{Inv gamma}(0.001, 0.001) \\
+\end{array}
+\label{eqn:priorsconditionalEstEqn}
+\end{equation}
+
+\subsubsection{Dynamic pricing based on model results}
+The table below contains regression results for October SSTs, predicted between the preceding December and August. The regressions were all estimated using parallel Markov Chain Monte Carlo (MCMC) chains, each with 100,000 iterations, 50,000 of which were discarded as a warm-up\cite{stan2013}. 
+
+[CHANGE]
+The $\hat{R}$ on all parameters below and in part Pricing Appendix were 1, indicating convergence on the simulation.
+
+\input{Tables/regOfConditionalsTablemonth10}
+
+Looking at the 2.5th and 97.5th percentile of the distributions for $b$, its clear that the forecasts become more valuable predictors as the year goes on. Going from December to August, the 95 percent probability interval for the forecast parameter, $b$ steadily tightens to a range including 1. This suggest that the correlation between forecasts and eventual SSTs increases throughout the predictive window. As the explanatory value of $b$ increases, $a$ decreases. Just as climate scientists suggested, $a$'s 95 percent probability tightening around 0 after March.
+
+Using the posterior draws of parameter values from these 108 regressions, I simulated SSTs predicted by each possible forecast value between -2 and 2 (forecasts are rounded to one decimal). For example, I took 50,000 posterior draws of $a$, $b$, and $\sigma_{y}^2$ from the regression corresponding to October SSTs predicted by April forecasts. I used each of those 50,000 vectors of three parameters to randomly generate one October SSTs, based on an average April forecast of mild El Ni\~no conditions in the coming October (a forecast value of 0.5.) That left me with 50,000 October SST conditioned on a forecast of 0.5 made in April. I repeated that procedure to produce conditional distributions for SSTs for each month of the year, predicted by a wide range of forecast values, from all possible forecast months. The resulting stochastic catalog allowed me to price El Ni\~no/La Ni\~na risk for any month given any IRI average forecast. 
+
+The empirical distribution functions of those posterior simulations, converted back into absolute SSTs, are shown in figures \ref{fig:conditionalCDFsJantoJune} and \ref{fig:conditionalCDFsJantoJune}. In those figures, deeper blue lines indicate colder forecast averages from IRI and deeper red lines indicate warmer forecasts.
+ 
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFsJantoJune}
+  \caption{Cumulative distribution functions for realized January through June Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts for various months}
+   \label{fig:conditionalCDFsJantoJune}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFsJultoDec}
+    \caption{Cumulative distribution functions for realized July through December Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts for various months}
+   \label{fig:conditionalCDFsJultoDec}
+\end{figure*}
+
+Notice how the blue and red lines are tightly bound ten months prior to any given target month (down the rightmost column) in figures \ref{fig:conditionalCDFsJantoJune} and \ref{fig:conditionalCDFsJultoDec}. This indicates that forecasts had little or no predictive power, as warm forecasts were as closely associated with eventual warm conditions as cold forecasts, and visa versa. In some cases, where the blue lines peek above the red, the colder forecasts are actually associated with higher eventual SSTs. The fact that the red and blue lines bunch together as you move left to right across rows in figures \ref{fig:conditionalCDFsJantoJune} and \ref{fig:conditionalCDFsJultoDec} suggests that the signal from IRI's average forecasts deteriorates as we go further back in the predictive window.
+
+By contrast, two months away from a target month (down the leftmost column of figures \ref{fig:conditionalCDFsJantoJune} and \ref{fig:conditionalCDFsJultoDec}), forecasts are meaningful. Blue lines sit below red lines. So a warm forecast shifts the distribution of eventual SSTs warmer and visa versa.
+
+The spring predictive barrier is also clear in the figures. The difference between April outcomes, conditioned on particularly cold and warm forecasts made just two months prior, is smaller than the same difference for February SSTs made ten months out. In visual terms, the ECDFs for row April, column t-2 months are more compact than the ECDFs for row February, column t-10 months. In other words, April SSTs show a weaker link to February predictions than February SSTs show to predictions from the preceding April. 
+
+\input{Tables/conditionalsLNTablemonth10sub}
+
+In table \ref{tab:pricesOctSub}, I translated these simulation results into pricing for October La Ni\~na protection (put options on October SST). As before in this chapter, I used a payout function that began one standard deviation below normal and reached 100 percent of the nominal value of the agreement (sum insured) at three standard deviations below normal. The full conditional pricing tables for all months, covering both El Ni\~no and La Ni\~na, are available [ONLINE].
+
+
+\subsubsection{Result 1} 
+stochastic catalog
+
+\subsubsection{Result 2}
+Information is more important at some points than others
+
+
+
+\section{Application}
+\subsection{Key changes to make this operational}
+The prices in table \ref{tab:pricesOctSub} and [ONLINE] only reflect the underlying risk of the index. In actual transactions, these pure risk prices will generally be:
+\begin{itemize}
+\item adjusted (downward) to reflect the time value of the premium paid by hedgers;
+\item subjected to some margining\footnote{Margining refers to the process of setting aside collateral on financial trades. On exchange-traded derivatives there are clear, predictable rules for how much money must be set aside as collateral in a \emph{margin account} as the trade's settlement index changes over time.} rules, when applicable; and
+\item adjusted (upward) to allow for some reasonable expected profit for speculators.
+\end{itemize}
+
+\subsection{Understanding informational and monetary gains from better forecasts}
+
+\subsection{Remove best forecast and compare pricing with and without it. What is the earning opportunity?}
+
+\subsection{Alternatively: application of finding natural swaps}
+
+\section{Conclusion}
+
+\subsection{Key results summary}
+
+\subsubsection{Distributional properties – several assumptions seem to work}
+
+\paragraph{Normality assumption works well (and may have analytical benefits?)}
+
+\subsubsection{Information changes significantly and so motivates dynamic pricing}
+
+\paragraph{Inflection points and critical information}
+
+\paragraph{Identifying the magnitude of uncertainty and its pricing implications}
+
+\paragraph{IRI ensemble forecast can provide foundation for baseline}
+
+\subsection{Other necessary conditions for traded market}
+
+\subsection{Positive externalities}
+
+\subsubsection{Better climate models (O.J. futures example)}
+
+\subsubsection{Should government finance the startup?}
+
+\bibliography{References/references}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}

@@ -1,0 +1,114 @@
+\begin{thebibliography}{16}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ashok et~al.(2007)Ashok, Behera, Rao, Weng, and
+  Yamagata]{ashok2007Nino}
+Karumuri Ashok, Swadhin~K Behera, Suryachandra~A Rao, Hengyi Weng, and Toshio
+  Yamagata.
+\newblock {El Ni\~no Modoki} and its possible teleconnection.
+\newblock \emph{Journal of Geophysical Research: Oceans (1978--2012)},
+  112\penalty0 (C11), 2007.
+
+\bibitem[Barnston et~al.(1997)Barnston, Chelliah, and
+  Goldenberg]{barnston1997documentation}
+A.G. Barnston, M.~Chelliah, and S.B. Goldenberg.
+\newblock Documentation of a highly {ENSO}-related {SST} region in the
+  equatorial {Pacific}.
+\newblock \emph{Atmosphere Ocean}, 35\penalty0 (3):\penalty0 367, 1997.
+
+\bibitem[Coelho et~al.(2004)Coelho, Pezzulli, Balmaseda, Doblas-Reyes, and
+  Steph{ENSO}n]{coelho2004forecast}
+CAS Coelho, S~Pezzulli, M~Balmaseda, FJ~Doblas-Reyes, and DB~Steph{ENSO}n.
+\newblock Forecast calibration and combination: A simple {Bayesian} approach
+  for {ENSO}.
+\newblock \emph{Journal of Climate}, 17\penalty0 (7):\penalty0 1504--1516,
+  2004.
+
+\bibitem[Khalil et~al.(2007)Khalil, Kwon, Lall, Miranda, and
+  Skees]{khalil2007Nino}
+A.F. Khalil, H.~Kwon, U.~Lall, M.J. Miranda, and J.~Skees.
+\newblock {El Ni\~no}-{Southern Oscillation}-based index insurance for floods:
+  Statistical risk analyses and application to {Peru}.
+\newblock \emph{Water Resources Research}, 43\penalty0 (10):\penalty0 10416,
+  2007.
+
+\bibitem[Kurtov(2010)]{kurtov2010investing}
+A.~Kurtov, editor.
+\newblock \emph{Investing in Insurance Risk: Insurance-Linked Securities - A
+  Practitioner's Perspective}.
+\newblock Risk Books, June 2010.
+
+\bibitem[Luo et~al.(2007)Luo, Wood, and Pan]{luo2007bayesian}
+Lifeng Luo, Eric~F Wood, and Ming Pan.
+\newblock {Bayesian} merging of multiple climate model forecasts for seasonal
+  hydrological predictions.
+\newblock \emph{Journal of Geophysical Research: Atmospheres}, 112\penalty0
+  (D10), 2007.
+
+\bibitem[Reynolds(1988)]{reynolds1988real}
+Richard~W Reynolds.
+\newblock A real-time global sea surface temperature analysis.
+\newblock \emph{Journal of Climate}, 1\penalty0 (1):\penalty0 75--86, 1988.
+
+\bibitem[Reynolds and Marsico(1993)]{reynolds1993improved}
+Richard~W Reynolds and Diane~C Marsico.
+\newblock An improved real-time global sea surface temperature analysis.
+\newblock \emph{Journal of Climate}, 6\penalty0 (1):\penalty0 114--119, 1993.
+
+\bibitem[Reynolds and Smith(1994)]{reynolds1994improved}
+Richard~W Reynolds and Thomas~M Smith.
+\newblock Improved global sea surface temperature analyses using optimum
+  interpolation.
+\newblock \emph{Journal of Climate}, 7\penalty0 (6):\penalty0 929--948, 1994.
+
+\bibitem[Reynolds et~al.(2002)Reynolds, Rayner, Smith, Stokes, and
+  Wang]{reynolds2002improved}
+Richard~W Reynolds, Nick~A Rayner, Thomas~M Smith, Diane~C Stokes, and Wanqiu
+  Wang.
+\newblock An improved in situ and satellite {SST} analysis for climate.
+\newblock \emph{Journal of Climate}, 15\penalty0 (13):\penalty0 1609--1625,
+  2002.
+
+\bibitem[Smith and Reynolds(2003)]{smith2003extended}
+Thomas~M Smith and Richard~W Reynolds.
+\newblock Extended reconstruction of global sea surface temperatures based on
+  {COADS} data (1854-1997).
+\newblock \emph{Journal of Climate}, 16\penalty0 (10):\penalty0 1495--1510,
+  2003.
+
+\bibitem[Smith and Reynolds(2004)]{smith2004improved}
+Thomas~M Smith and Richard~W Reynolds.
+\newblock Improved extended reconstruction of {SST} (1854-1997).
+\newblock \emph{Journal of Climate}, 17\penalty0 (12):\penalty0 2466--2477,
+  2004.
+
+\bibitem[Smith et~al.(2008)Smith, Reynolds, Peterson, and
+  Lawrimore]{smith2008improvements}
+Thomas~M Smith, Richard~W Reynolds, Thomas~C Peterson, and Jay Lawrimore.
+\newblock Improvements to {NOAA}'s historical merged land-ocean surface
+  temperature analysis (1880-2006).
+\newblock \emph{Journal of Climate}, 21\penalty0 (10):\penalty0 2283--2296,
+  2008.
+
+\bibitem[{Stan Development Team}(2013)]{stan2013}
+{Stan Development Team}.
+\newblock Stan: A {C++} library for probability and sampling, version 1.3,
+  2013.
+\newblock URL \url{http://mc-stan.org/}.
+
+\bibitem[{The Economist}(2013)]{econ2013ETS}
+{The Economist}.
+\newblock Carbon trading: Ets, rip?
+\newblock \emph{The Economist}, {April 20} 2013.
+
+\bibitem[Xue et~al.(2003)Xue, Smith, and Reynolds]{xue2003interdecadal}
+Yan Xue, Thomas~M Smith, and Richard~W Reynolds.
+\newblock Interdecadal changes of 30-yr {SST} normals during 1871-2000.
+\newblock \emph{Journal of Climate}, 16\penalty0 (10):\penalty0 1601--1612,
+  2003.
+
+\end{thebibliography}

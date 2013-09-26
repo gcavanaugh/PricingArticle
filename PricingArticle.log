@@ -1,0 +1,495 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  12 SEP 2013 16:16
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**PricingArticle.tex
+(./PricingArticle.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
+, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutch, u
+kenglish, usenglishmax, esperanto, estonian, farsi, finnish, french, galician, 
+german, ngerman, swissgerman, monogreek, greek, hungarian, icelandic, assamese,
+ bengali, gujarati, hindi, kannada, malayalam, marathi, oriya, panjabi, tamil, 
+telugu, indonesian, interlingua, irish, italian, kurmanji, lao, latin, latvian,
+ lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, polish, portuguese, roma
+nian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turkish,
+ turkmen, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks15
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/02/14 v0.04n Graphics/color for pdfTeX
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen114
+\lightrulewidth=\dimen115
+\cmidrulewidth=\dimen116
+\belowrulesep=\dimen117
+\belowbottomsep=\dimen118
+\aboverulesep=\dimen119
+\abovetopsep=\dimen120
+\cmidrulesep=\dimen121
+\cmidrulekern=\dimen122
+\defaultaddspace=\dimen123
+\@cmidla=\count100
+\@cmidlb=\count101
+\@aboverulesep=\dimen124
+\@belowrulesep=\dimen125
+\@thisruleclass=\count102
+\@lastruleclass=\count103
+\@thisrulewidth=\dimen126
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/units/units.sty
+Package: units 1998/08/04 v0.9b Typesetting units
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/units/nicefrac.sty
+Package: nicefrac 1998/08/04 v0.9b Nice fractions
+\L@UnitsRaiseDisplaystyle=\skip46
+\L@UnitsRaiseTextstyle=\skip47
+\L@UnitsRaiseScriptstyle=\skip48
+))
+(/usr/local/texlive/2010/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count104
+\FV@InFile=\read1
+\FV@TabBox=\box28
+\c@FancyVerbLine=\count105
+\FV@StepNumber=\count106
+\FV@OutFile=\write3
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2008/12/05 v1.6h multicolumn formatting (FMi)
+\c@tracingmulticols=\count107
+\mult@box=\box29
+\multicol@leftmargin=\dimen127
+\c@unbalance=\count108
+\c@collectmore=\count109
+\doublecol@number=\count110
+\multicoltolerance=\count111
+\multicolpretolerance=\count112
+\full@width=\dimen128
+\page@free=\dimen129
+\premulticols=\dimen130
+\postmulticols=\dimen131
+\multicolsep=\skip49
+\multicolbaselineskip=\skip50
+\partial@page=\box30
+\last@line=\box31
+\mult@rightbox=\box32
+\mult@grightbox=\box33
+\mult@gfirstbox=\box34
+\mult@firstbox=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\c@columnbadness=\count113
+\c@finalcolumnbadness=\count114
+\last@try=\dimen132
+\multicolovershoot=\dimen133
+\multicolundershoot=\dimen134
+\mult@nat@firstbox=\box53
+\colbreak@box=\box54
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2005/01/26 v1.0 150 paragraphs of Lorem Ipsum dummy text
+File: lipsum.dtx 2005/01/26 v1.0 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count115
+)
+(./PricingArticle.aux)
+\openout1 = `PricingArticle.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+
+(/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count116
+\scratchdimen=\dimen135
+\scratchbox=\box55
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen136
+\MPnumerator=\count120
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
+
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
+)
+(/usr/local/texlive/2010/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+
+(/usr/local/texlive/2010/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 436.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 56.
+
+(/usr/local/texlive/2010/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 56.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [1
+
+{/usr/local/texlive/2010/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [3]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [4]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [5]
+Overfull \hbox (0.61859pt too wide) in paragraph at lines 203--204
+ \OT1/cmr/bx/n/10 Is there mean-ing-ful in-for-ma-tional change?[] \OT1/cmr/m/n
+/10 If in-for-ma-tion doesn't change,
+ []
+
+[6]
+Overfull \hbox (221.89017pt too wide) in paragraph at lines 224--225
+\OT1/cmr/m/n/10 exclusively[[]][[]][[]]. 
+ []
+
+
+Overfull \hbox (96.88976pt too wide) in paragraph at lines 228--229
+\OT1/cmr/m/n/10 cover and at-mo-spheric wa-ter vapor[[]]
+ []
+
+[7]
+<graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf, id=31, 722.7pt x 433.6
+2pt>
+File: graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf Graphic file (type
+ pdf)
+ <use graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf>
+Overfull \hbox (59.2785pt too wide) in paragraph at lines 244--245
+\OT1/cmr/m/n/10 stretches across the cen-tral Pacific[[]]
+ []
+
+
+Overfull \hbox (182.25305pt too wide) in paragraph at lines 244--245
+\OT1/cmr/m/n/10 also called \OT1/cmr/m/it/10 Modoki \OT1/cmr/m/n/10 Ni~nos and 
+can have large global impacts[[]]. 
+ []
+
+[8 <./graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+ [9]
+<graphics/Pricingfigs/optionParamsByMonth.pdf, id=52, 505.89pt x 361.35pt>
+File: graphics/Pricingfigs/optionParamsByMonth.pdf Graphic file (type pdf)
+
+<use graphics/Pricingfigs/optionParamsByMonth.pdf>
+<graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf, id=53, 505.89pt x 
+361.35pt>
+File: graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf Graphic file (
+type pdf)
+ <use graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf>
+[10 <./graphics/Pricingfigs/optionParamsByMonth.pdf>] [11 <./graphics/Pricingfi
+gs/payoutExamplemonth10contractType1.pdf>]
+<graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf, id=76, 505.89pt x 7
+22.7pt>
+File: graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf Graphic file (t
+ype pdf)
+ <use graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf>
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+[12] [13 <./graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf>]
+<graphics/Pricingfigs/SST_table_march_ex.png, id=94, 645.41125pt x 548.0475pt>
+File: graphics/Pricingfigs/SST_table_march_ex.png Graphic file (type png)
+
+<use graphics/Pricingfigs/SST_table_march_ex.png> [14 <./graphics/Pricingfigs/S
+ST_table_march_ex.png (PNG copy)>]
+Overfull \hbox (128.24535pt too wide) detected at line 342
+[]
+ []
+
+
+Overfull \hbox (223.08452pt too wide) in paragraph at lines 344--345
+\OT1/cmr/m/n/10 forecasts[[]][[]].
+ []
+
+
+Overfull \hbox (15.33397pt too wide) in paragraph at lines 358--359
+\OT1/cmr/m/n/10 tions, 50,000 of which were dis-carded as a warm-up[[]]. 
+ []
+
+[15] (./Tables/regOfConditionalsTablemonth10.tex) [16]
+<graphics/Pricingfigs/conditionalCDFsJantoJune.pdf, id=109, 1156.32pt x 1589.94
+pt>
+File: graphics/Pricingfigs/conditionalCDFsJantoJune.pdf Graphic file (type pdf)
+
+ <use graphics/Pricingfigs/conditionalCDFsJantoJune.pdf>
+<graphics/Pricingfigs/conditionalCDFsJultoDec.pdf, id=110, 1156.32pt x 1589.94p
+t>
+File: graphics/Pricingfigs/conditionalCDFsJultoDec.pdf Graphic file (type pdf)
+ <use graphics/Pricingfigs/conditionalCDFsJultoDec.pdf>
+(./Tables/conditionalsLNTablemonth10sub.tex) [17] [18 <./graphics/Pricingfigs/c
+onditionalCDFsJantoJune.pdf>] [19 <./graphics/Pricingfigs/conditionalCDFsJultoD
+ec.pdf>]
+Overfull \hbox (2.15007pt too wide) in paragraph at lines 411--411
+[]\OT1/cmr/bx/n/12 Understanding in-for-ma-tional and mon-e-tary gains from
+ []
+
+Missing character: There is no ‚ in font cmbx10!
+Missing character: There is no Ä in font cmbx10!
+Missing character: There is no ì in font cmbx10!
+[20] (./PricingArticle.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
+[]\OT1/cmr/m/n/10 Karumuri
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--22
+[]\OT1/cmr/m/n/10 A.G. Barn-ston,
+ []
+
+
+Overfull \hbox (20.86183pt too wide) in paragraph at lines 25--30
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--38
+[]\OT1/cmr/m/n/10 A.F. Khalil,
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 91--96
+[]\OT1/cmr/m/n/10 Thomas M
+ []
+
+
+Underfull \hbox (badness 4001) in paragraph at lines 98--102
+\OT1/cmr/m/n/10 li-brary for prob-a-bil-ity and sam-pling, ver-sion 1.3, 2013. 
+ URL
+ []
+
+) [22] [23] (./PricingArticle.aux) ) 
+Here is how much of TeX's memory you used:
+ 2778 strings out of 493747
+ 39521 string characters out of 3143546
+ 205970 words of memory out of 3000000
+ 6017 multiletter control sequences out of 15000+200000
+ 9889 words of font info for 36 fonts, out of 3000000 for 9000
+ 714 hyphenation exceptions out of 8191
+ 38i,10n,23p,1092b,227s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2010/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.
+pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on PricingArticle.pdf (23 pages, 2459369 bytes).
+PDF statistics:
+ 207 PDF objects out of 1000 (max. 8388607)
+ 146 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
