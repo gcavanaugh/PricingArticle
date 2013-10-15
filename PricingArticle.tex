@@ -1,19 +1,46 @@
-\documentclass{article}
-
-%\geometry{showframe}% for debugging purposes -- displays the margins
-
+\documentclass[authoryear]{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{gensymb}
+\usepackage{moresize}
+%\usepackage[round]{natbib}
+\usepackage{natbib}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{url}
+
+\geometry{dvips,paperwidth=8.5in,paperheight=11in,body={6.5in,9.5in},left=1in,
+top=1in}
+\widowpenalty=1000 \clubpenalty=1000
+\renewcommand{\baselinestretch}{1.25}
+
+
+%%This code prevents big figures from being 
+ % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+	% N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
 
 % Set up the images/graphics package
-\usepackage{graphicx}
 \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
 \graphicspath{{graphics/}}
-
-\title{Pricing ENSO Derivatives}
-\author{Grant Cavanaugh, Ph.D.\\
-	Benjamin Collier, Ph.D.\\
-	University of Pennsylvania}
-\date{}  % if the \date{} command is left out, the current date will be used
 
 % The following package makes prettier tables.  We're all about the bling!
 \usepackage{booktabs}
@@ -45,123 +72,147 @@
 %Prints a degree symbol
 \newcommand{\degreesym}{\ensuremath{^\circ}}
 
+
+
 \begin{document}
+
+\title{Pricing ENSO Derivatives}
+\date{}  % if the \date{} command is left out, the current date will be used
+%
+%\author[grant]{Grant Cavanaugh}
+%
+%\author[wharton]{Benjamin L. Collier}
+%\ead{bencol@wharton.upenn.edu}
+%
+%\author[uky]{Jerry R. Skees}
+%\ead{jerry.skees@uky.edu}
+%
+%\address[grant]{Cavanaugh LLC}
+%\address[wharton]{Wharton Risk Management and Decision Processes Center, University of Pennsylvania, Phialdelphia, PA 19104, USA}
+%\address[uky]{Department of Agricultural Economics, University of Kentucky, Lexington, KY 40546, USA}
+%
+
 
 \maketitle% this prints the handout title, author, and date
 
 
-\section{Core themes/ideas}
-\subsection{Introduction}
+\section{Introduction}
+
+~ 1 page summary
+
 \begin{itemize}
 \item Existing traded markets don't hedge climate risk directly
 \item Climate could be managed through non-traded markets (e.g. insurance) but there are utility to trading
 \end{itemize}
 
-\subsection{Body}
 \begin{itemize}
 \item Introduce a tool that is necessary but not sufficient to start the first direct climate markets
 \item Pricing financial products around uncertainty in climate forecasts
 \item Does information about ENSO change sufficiently to warrant trading?
 \item Considering modeling advantages and identification of mispricing
-\item  Positive externality – better climate models
+\item Positive externality – better climate models
 \end{itemize}
 
-\section{Changes/Additions from dissertation chapter}
-\begin{itemize}
-\item report bandwidth on kernel
-\item use MLE algorithm for fitting distributions (unless specific reason to do otherwise)
-\item motivation on normal 
-\item consider using color gradient on the red and blue bands on the payout graph 
-\item change the month scale (?)
-\item 3.11 consider rounding 
-\item one st dev with number in parens
-\item move 3.14 up into distb section
-\item define neff and Rhat for tab 3.2
-\item can we say something about the the complexity of the problem and it's implication of the pricing?
-\end{itemize}
-
-\section{Introduction}
-
-\subsection{~ 1 page summary of paper}
-
-\subsection{Large unmanaged risk related to climate (status quo)}
-Climate risk is a growing concern for hedgers across the globe. 
-
-DISSREF estimates El Ni\~no/La Ni\~na's economic cost of this teleconnection, finding:
-\begin{itemize} 
-\item ENSO risk is large enough in absolute terms to justify formal risk markets;
-\item large pools of ENSO risk offset one another in time and space, suggesting that ENSO markets could sustain balanced, direct trading among hedgers; and 
-\item ENSO creates a pool of economic risk that is comparable to those underlying some large futures markets today.
-\end{itemize}
-
-\subsection{Short-comings of existing schemes for managing climate risk}
-Yet, those hedgers have never had the opportunity to manage that risk on exchange traded derivatives markets. 
-
-\subsubsection{Policy markets}
-There are markets covering the policy response to climate change, like those on emissions permits. But those markets focus on the policy response to climate change, not climate change per se. The EU's emissions-trading system (ETS), the legally binding system underpinning the largest carbon trading system on the planet, recently provided a jarring reminder of that distinction. On April 16, 2013 the European Parliament voted against proposals that would have altered the scheduled for issuing emissions permits under the ETS. That day, the price of EU carbon permits fell 40 percent \cite{econ2013ETS}. [ADD IN LINE ABOUT BASIS AND DEFINE BASIS]
-
-\subsubsection{Weather != climate}
-Of course, there are exchange-traded weather indexes. But it is difficult to see global scale changes in climate patterns just looking at the individual cities and regions those markets cover. Indeed, because those markets are so localized they miss the chance to attract liquidity from the diverse groups of hedgers that face dire consequences from changing weather patterns across the planet. That limited scale may explain some of their struggle to establish liquidity. 
-
-\subsubsection{Climate linked business indexes}
-One possible alternative
-For example, the stocks price of reinsurers, companies with direct downside risk from extreme cliamte events, tend to be driven as much by their investing returns as by their climate linked losses\cite{kurtov2010investing}. 
+Scope of paper and roadmap \\
+While we start from broad scope of risk transfer, the paper's primary focus is traded derivatives [and similar comments, as needed].
+%\section{Changes/Additions from dissertation chapter}
+%\begin{itemize}
+%\item report bandwidth on kernel
+%\item use MLE algorithm for fitting distributions (unless specific reason to do otherwise)
+%\item motivation on normal 
+%\item consider using color gradient on the red and blue bands on the payout graph 
+%\item change the month scale (?)
+%\item 3.11 consider rounding 
+%\item one st dev with number in parens
+%\item move 3.14 up into distb section
+%\item define neff and Rhat for tab 3.2
+%\item can we say something about the the complexity of the problem and it's implication of the pricing?
+%\end{itemize}
 
 
+\subsection{The challenge of financial risk transfer for climate change}
+Adaptation to anthropogenic climate change remains one of the greatest challenges of the 21st century [cite]. Risks of greatest concern include increasing temperatures, dramatic precipitation changes, and rising sea levels. Those most at risk are in developing economies least equipped to adapt. Broad recognition exists of the need for financial mechanisms such as insurance as an important component of adaptation [cite UNFCCC]; however, the nature of climate change limits opportunities for financial risk transfer.
 
-\subsection{Geophysical indexes as an atlernative}
-We need something actually linked to the climate.
+First, relative to the planning horizons of many commercial and public decision makers, the time frame of climate change risk is too long. Climate models tend to be based on 50 or even 100 year horizons [see, CITE a few]. In contrast, insurance against extreme weather rarely extends beyond a year, and hedging in traded markets provides ongoing opportunities to enter or exit.
 
-An index where:
-\begin{itemize}
-\item The index has mmediate consequences
-\item Genuine uncertainty - Some risks too certain for hedging (rising sea levels)
-\item Error around estimates can be quantified (vs. IPCC, ``very likely'')
-\item Models verifiable
-\end{itemize}
+Second, financial risk transfer is not suitable for managing known outcomes but managing the risk around uncertain outcomes. %As the saying goes, insurance is very expensive once the house is on fire. 
+For example, the \citet{ipcc2013fifthReport} notes with virtual certainty (a $>$99\% chance) that sea level rise will continue beyond 2100. Thus, the known outcome of sea level rise is best managed through risk mitigation (building levees, relocating populations, etc.), not risk transfer. The extent of sea level rise is uncertain -- the \citet{ipcc2013fifthReport} predicts with medium confidence that sea level rise between 0.26-0.82 meters by 2100 is likely (a $>$66\% chance) -- making \textit{extent} of sea level rise a more suitable financial hedge; however, the long time horizon precludes the development of this market.
 
-This rules out many geophysical indexes but...
-\paragraph{Teleconnections}
-Instead, there is a need for true climate markets.
-Teleconnections are great candidates to provide what existing markets don't.
-Example of what climate scientists call “teleconnections.” Teleconnections refer to the statistical and physical links between regional anomalies in the ocean and atmosphere and patterns of weather around the world.
+Third, new information about climate risk is difficult to verify and integrate with previous information. The IPCC provides an important service in distilling a massive body of literature for decision makers, using the most qualified scientists in the world; however, the validity of many of their predictions often cannot be tested in our lifetime. This differs starkly from models that can be tested and improved with ongoing feedback. As a result, the capacity to use climate models for estimating and pricing uncertain outcomes associated with climate change is limited.
 
-\paragraph{El Ni\~no/La Ni\~na}
-The most famous teleconnection involves El Ni\~no/La Ni\~na, a shift in ocean temperatures (and atmospheric pressure) in the Pacific Ocean that wreaks havoc on agricultural and energy markets and occasionally causes outright humanitarian crises in South America, Southeast Asia, and Australia.
+Fourth, parties wanting to transfer climate change risk may have difficulty identifying counterparties willing to take it. Derivatives on traded markets need balanced hedging, market participants  who would be negatively affected by an outcome trading with those who would be positively affected. While some individuals and industries will benefit from climate change [CITE], their economic interests pale in comparison to those that will be negatively affected. Reinsurers specialize in risks for which there is no upside, but given their current massive exposure to climate change risk and limited ability to diversify events affecting the whole world, their desire to take on additional climate change risk is likely limited.
 
-\subparagraph{El Ni\~no is climate change as we experience it}
-Nature paper on ENSO and climate change (there seems to be a link)
+\subsubsection{Limitations of current weather markets for climate change adaptation}
+In contrast to products managing long-term climate change risk, many insurance and traded derivative products exist to manage weather extremes. Of course, property, crop, and business interruption insurances protect against losses from extreme events; however, a variety of new weather products are protecting directly against the occurrence of adverse weather, creating new opportunities for risk transfer. For example, farmers from regions diverse as India, Malawi, Ghana, Thailand, and Canada can purchase parametric insurance which pays based on insufficient or excess rainfall [CITE]. Traded markets for weather have also emerged. These markets began with the deregulation of the U.S. energy sector in 1998, creating a demand for energy suppliers to hedge against seasonal temperatures that would reduce their revenues (e.g., cold summers) [CITE?]. Currently, the Chicago Mercantile Exchange includes temperatures contracts for major cities in the U.S., Canada, Europe, Japan, and Australia as well as derivatives for hurricanes, snowfall, and rainfall in vulnerable U.S. cities. These traded products are likely confined to the largest cities in the world due to the need for a certain volume of market liquidity. Moreover, because those markets are so localized they miss the chance to attract participation from the diverse groups of hedgers adversely affected by changing weather patterns across the planet.
 
-\subparagraph{And it is big}
-DISSREF
+All of these products, both the insurances and traded derivatives provide coverage for less than one year. While the incremental change in weather risk due to climate change from one year to the next is small, these changes can be integrated in the price of contracts. For example, reinsurers often include an ``uncertainty load," additional premium for risks they believe may differ from the historical record.
+
+While the risks that climate models predict 50 to 100 years in the future are likely too far away for financial hedging, many public and private decision makers have planning horizons that extend beyond one year and so would benefit from protection of longer duration than that typically provided by weather insurance and derivatives. Adaptation to climate change frequently requires multiyear investments. For example, the government of Moazambique is making short- and long-term investments improving dykes, levees, and dams to adapt to increasing flood risk in the Limpopo River Basin \citep{worldBank2013limpopo}. Also, consider a large agricultural producer wanting to manage its financial risk while switching farming systems in response to changing growing conditions. [Would be great if we can find real life examples of this] These and other decision makers would potentially benefit from financial protection to complement these investments and may be in particular need during this adaptation process.
+
+These arguments suggest a missing market, one that could address the necessary conditions for financial transfer outlined above as well as more closely match the planning horizons of decision makers attempting to manage climate change. This paper considers whether financial markets for what climate scientists call "teleconnections" might address that market gap.
+
+\subsubsection{The potential of financial markets for teleconnections}
+Teleconnections describe patterns in atmospheric pressure and the flow of air and ocean currents that drive weather conditions on a global scale. The most influential teleconnection is the El Niño Southern Oscillation (ENSO), which comprises circulation along the equatorial Pacific, affecting seasonal weather conditions in a large portion of the Americas, Australia, south and southeast Asia, and southeast Africa [CITE]. Other important teleconnections include the North Atlantic Oscillation, which influences rainfall in Western Europe and West Africa, the Arctic Oscillation, which affects winter conditions in many areas of the northern hemisphere, and the Indian Ocean Dipole, which influences the monsoon season in India and rainfall in Australia and Southeast Asia [CITE and verify any and all of these].
+
+Teleconnections have annual, multiannual, or even decadal cycles. For example, [CITE, could cite us but better someone else] show that the North Atlatnic Oscillation can affect West African rainfall for decades at a time. Each year, ENSO experiences seasonal periods of warming and cooling....[tell more about ENSO and annual and multiyear footprints]
+
+Because of its relative importance, this paper uses ENSO as a test example for evaluating the potential of a traded financial market. ENSO has a warming anomaly called El Ni\~no, which occurs due to disruptions in ocean and atmospheric circulation across the equatorial Pacific. The changing pressure affects the formation of weather fronts throughout the world. La Ni\~na is a cooling event above normal circulation in the Pacific. While La Ni\~na tends to affect as many regions as El Ni\~no, its consequences are not as acute.
+
+The influence of anthropogenic climate change on ENSO has been studied a great deal with conflicting results [e.g., CITE]. Recent evidence, such as from [CITE] finds that climate change is likely to increase the frequency of severe ENSO anomalies. The \citet{ipcc2013fifthReport} concludes ENSO related rainfall is \emph{likely} to intensify due to climate change.
+
+Another aspect of teleconnections that increases the value of hedging against their extremes is that their anomalies predate regional weather conditions by weeks and sometimes months. For example, [provide example, preferably that isn't flooding in Peru since it will be discussed extensively below. (Instead, maybe winter weather in the U.S.?, something in Austriala? Monsoon in India?)]. A financial option could pay before on-the-ground difficulties emerged. In the context of climate change, such a contract could provide liquidity for adaptive management, adjusting production decisions based on emerging information, or for loss mitigation before a severe event. Because El Ni\~no seems to be increasing due to climate change, the emergence of a new event may be an important moment when decision makers update their risk perceptions. Thus, an early payment from an option on El Ni\~no would come to the hedger at a decision point in which she must decide whether to use the liquidity to reduce losses under the current production strategy or to use it to finance an adaptive change.
+
+\subsection{Economic effects of El Ni\~no and La Ni\~na}
+[As much as possible, let's reference this out as estimating total losses is beyond the scope here. We can cite Grant's dissertation but should also cite some other sources, too. We will have to defend original research so as much as possible, I suggest we cite what's already out there. Also note that the extra benefit is that much of risk is in developing and emerging economies]
+
 Flood and epidemics on South America's Pacific Coast – as discussed above South America hosts the most devastating impacts of the El Ni\~no/La Ni\~na. Based on my statistical analysis of disaster costs over the last half century, I estimate that an extreme El Ni\~no (of which there have been 3 or 4 in the last century) causes median economic damages across the region of USD 3.4b.
 
-Flooding in Pacific Asia and Oceania - This impact is generally associated with La Ni\~na and has caused headline-grabbing destruction in recent years. I estimate that the expected impact of a La La Ni\~na event of the same magnitude as that of 1988, (of which we’ve had two since 1970) causes regional damages of more more than USD$8$b in absolute damages. This may be an underestimate however, given that official Australian figures for the economic damage from the 2010 La Ni\~na, which was not particularly catastrophic by historical standards, were roughly USD 12.5 billion. 
+Flooding in Pacific Asia and Oceania - This impact is generally associated with La Ni\~na and has caused headline-grabbing destruction in recent years. I estimate that the expected impact of a La La Ni\~na event of the same magnitude as that of 1988, (of which we’ve had two since 1970) causes regional damages of more more than USD 8 b in absolute damages. This may be an underestimate however, given that official Australian figures for the economic damage from the 2010 La Ni\~na, which was not particularly catastrophic by historical standards, were roughly USD 12.5 billion. 
 
-\paragraph{Cite literature on El Ni\~no and La Ni\~na consequences (extra benefit is that much is in developing and emerging economies)}
+\subsection{Peru and El Ni\~no insurance}
+No where in the world is more affected by ENSO anomalies than northern Peru and southern Ecuador. ENSO circulation follows an annual cycle. An emerging El Ni\~no results in ocean warming beginning in the first months of the year in the western Pacific and spreads eastward as the year progresses. By January of the next year, a mass of warm, humid air reaches the coast of South America and meets the cold air descending from the Andes, causing an extended period of torrential rains and flooding in northern Peru and southern Ecuador \citep{lagos2008nino}. Rain in northern Peru during the last severe El Ni\~no in 1998 was 40 times normal rainfall for January to May \citep{skees2009enso}. This event causes substantial loss of life; increases water-born illnesses; disrupts markets and supply chains; destroys homes, roads, and bridges; isolates communities, and inundates crops.
 
-\subsection{Introducing the potential for El Ni\~no/La Ni\~na}
-The best indicator that indexes of El Ni\~no/La Ni\~na are ready for exchange-trading is that one is already being used to settle a formal risk management.
+Through several development-oriented projects, funded by U.S. Aid for Internationl Development, the Bill \& Melinda Gates Foundation, the United Nations Development Programme, and GIZ (a German development agency), we had the opportunity to study the insurance market in Peru and contribute conceptually to the development of El Ni\~no insurance and its application. El Ni\~no insurance is a form of index (or parametric) insurance; it makes payments based on a measure of the severity of an event rather than on an estimate of the losses of the policyholder. The measure used for El Ni\~no insurance is elevations in the ocean temperature off the coast of Peru. Elevated ocean temperatures are the preferred method of estimating the severity of an El Ni\~no and so represent a logical index for this insurance [CITE?]
 
-In 2011, Caja Nuestra Gente, a large microfinance bank in Peru, purchased index-based insurance to protect its loan portfolio against defaults after catastrophic El Ni\~no flooding.  That insurance was developed by GlobalAgRisk, a research group led by University of Kentucky professor, Jerry Skees, with support from the Gates Foundation. 
+The insurance takes advantage of the forecastable nature of El Ni\~no. It makes payments using November and December ocean temperatures, which predate the severe rains and flooding that begin in January, making it one of the first forecast insurances in the world. Thus, the insurance could be used for loss mitigation and adaptation in the ways described above. Because a severe El Ni\~no has not occurred since this market developed, no evidence is available regarding how policyholders will use the early payment.
 
-Ninety-five percent of the risk on the policy went to international reinsurer PartnerRe and five percent was held by the Peruvian insurer, La Positiva. 
+\subsubsection{Market progress in Peru}
+Developing a catastrophe insurance market requires progress on both supply and demand and progress has been made on both fronts. The first provider of El Ni\~no insurance is a Peruvian-owned insurance company, La Positiva, which has structured to transfer 95\% of its exposure to a global reinsurer, PartnerRe. Based on the promise of this market, two of the other large insurers in Peru are considering offering a similar product.
 
-Payment on GlobalAgRisk’s El Ni\~no insurance is based solely off the sea-surface temperature, as measured by the US's National Oceanic and Atmospheric Administration (NOAA) over defined regions off the coast of Peru. Sharp rises in that temperature, particularly in the months of November through January, define the El Ni\~no phenomenon and are the cause of catastrophic flooding in Peru. (The opposite is true in La Ni\~na years – with the same index showing colder than normal temperatures which cause flooding on the other side of the Pacific in Australia and Southeast Asia.)
+On the demand side, a new insurance product requires education and marketing. The interests of the development groups funding our projects were in poverty alleviation and economic development with a particular interest in expanding access to credit in vulnerable regions. The research and education they funded led Caja Nuestra Gente, a large and highly regarded microfinance institution in Peru to purchase El Ni\~no insurance to address the risk of an event in 2013 and again for 2014. The microfinance institution is using this insurance to manage its exposure as it expands underdeveloped credit markets in northern Peru. Besides financial institutions, other highly vulnerable sectors include agriculture and fishing and the public sector. Entities in each of these sectors are evaluating how El Ni\~no insurance could address their vulnerability.
 
-\subsection{If we already have insurance, why do we need traded markets?}
+%This is a rather optimistic description of the market. Let's discuss if it works.
+
+\subsubsection{Challenges to El Ni\~no insurance expansion and longevity}
+The El Ni\~no insurance market is noteworthy in that it is the first market to directly hedge a teleconnection and has been structured as forecast insurance. Its development suggests a greater potential to transfer teleconnection risks around the world, which may facilitate climate change adaptation, as described above. Thus, while this market does not directly trade climate change risk, it seems to be a step closer than insurance and derivative contracts focused on weather in the current season. 
+
+Unfortunately, the nature of ENSO risk challenges the stability of the El Ni\~no insurance market. First, insurance markets benefit from stable premiums as fluctuating insurance prices increase marketing and origination costs as customers move in and out of the market. To offer El Ni\~no insurance at a stable rate, insurers must set a sales closing date far enough in advance that forecasts are not meaningful. If the insurer sets the closing date too late, potential buyers can adversely select to insure only in years when forecasts predict an event will occur. While an insurer could theoretically price the insurance dynamically throughout the year, insurers are not well structured to do so for catastrophe coverage. A time-sensitive price would need to be quoted by the reinsurer's underwriter, communicated by the reinsurance broker, confirmed by the insurer's underwriters, communicated to the insurer's broker, and then quoted to the customer, not a quick process. 
+%Moreover, because insurance is often poorly understood, changing prices from one year to the next would tend to frustrate customers \citep{kunreuther2013insurance}.
+As a result, El Ni\~no insurance must be purchased one year before a potential event, purchased in January to protect against the risk of torrential rains and flooding the following January. This early sales closing limits the entities that can participate in this market. For some firms, the high opportunity cost of purchasing insurance so far in advance is too great. [The next example may not be necessary.] For others, management dynamics constrain their ability to know estimate their El Ni\~no exposure so far in advance. For example, an agribusiness wants to choose its crop allocations in the weeks before the planting season based in part on commodity prices.
+
+Second, insurance markets benefit from stable demand. ENSO is perceived to be guided by negative feedback so that in the year following a severe El Ni\~no, a neutral or La Ni\~na year is more likely. Consequently, many policyholders will exit the market in the year (or several years) following a severe event. Such fluctuations in demand are discouraging to insurers and brokers, who build their business on automatic renewals and so may be unwilling to market such a product.
+
+[Grant Stop]\\
+
+[Ben Start]
+
+
+\subsection{Traded markets for ENSO}
+One potential solution to these challenges is structuring ENSO as a traded derivative.
+
+
 \begin{itemize}
 \item Better for asymmetric information
   \subitem Does not require early closing date
   \subitem Can better integrate multiyear trends
   \subitem Can integrate information on climate change
 \item Provision of public information
-\item Maximiing welfare through lower cost of risk transfer
+\item Maximizing welfare through lower cost of risk transfer
   \subitem Direct risk transfer
   \subitem Lower barriers to entry for motivated speculators
 \end{itemize}
 
-\subsubsection{(Better for asymmetric information) Limitations of insurance}markets when forecasting is possible, closing windows will only get longer over time
+\subsubsection{Better for asymmetric information} Limitations of insurance markets when forecasting is possible, closing windows will only get longer over time
 The biggest advantage of moving an El Ni\~no/La Ni\~na index to futures and options-on futures involves dynamic pricing of the underlying index. Currently, the sales closing date for the insurance is a full year before the period of coverage – meaning that a firm looking for coverage during the 2013 El Ni\~no season will need to choose whether or not to buy by then end of January 2013. 
 
 This schedule avoids the adverse selection problems created by El Ni\~no forecasts, which are improving incrementally every year and open up the possibility of opportunistic purchases – with the sophisticated buyers only buying coverage in years where they think an extreme El Ni\~no is likely. Indeed, in the first year that GlobalAgRisk’s El Ni\~no insurance was on sale, a large fishing company expressed interest in purchasing coverage, but requested additional time, beyond the original sales closing date, to make a final decision. In those critical weeks, new forecasts did come out suggesting El Ni\~no was less likely. While it is difficult to directly link the fishing company's subsequent decision not to purchase coverage to those forecasts, the experience provided a stark reminder of the adverse selection problems inherent to insurance based on a forecast-able index. In the following year, the sales closing date was moved to January. 
@@ -170,7 +221,7 @@ The lag between paying for and receiving coverage under GlobalAgRisk’s El Ni\~
 
 \subsubsection{(Provision of public information) Traded markets (securities or derivatives) would increase social gains by providing excellent forecasts} 
 
-The knock-on effect of dynamic pricing would be better public and private decisions related to this key climate phenomenon. Exchange-traded El Ni\~no/La Ni\~na derivatives would provide public information not just about the price of risk protection but also about the likelihood of extreme El Ni\~no/La Ni\~na events. Currently decision makers (particularly in Peru) have to grapple with many competing El Ni\~no/La Ni\~na forecasts, often built using different datasets and methodologies. 
+A primary benefit of dynamic pricing would be better information to guide public and private decisions related to this key climate phenomenon. Exchange-traded El Ni\~no/La Ni\~na derivatives would provide public information not just about the price of risk protection but also about the likelihood of extreme El Ni\~no/La Ni\~na events. Currently decision makers (particularly in Peru) have to grapple with many competing El Ni\~no/La Ni\~na forecasts, often built using different datasets and methodologies. 
 
 International Research Institutes for Climate and Society run by Columbia University and NOAA provides a running tally of the forecasts of the best El Ni\~no/La Ni\~na models from academia and national meteorological services. One look at that graph makes clear the need for the definitive consensus forecast that derivatives markets would provide. Without that touchstone newspapers and politicians in the most effected countries (Peru and Australia in particular) have often leaned heavily on alarmist forecasts - creating El Ni\~no fatigue among ordinary citizens and policy makers.
 
@@ -178,9 +229,19 @@ International Research Institutes for Climate and Society run by Columbia Univer
 Finally, El Ni\~no/La Ni\~na is well suited to exchange-traded derivatives markets [INSERT COMMENT EXPLAINING BALANCED HEDGING INTEREST ON A TWO SIDED MARKET] because it would facilitate the direct transfer of risk among a diverse collection of hedgers across the world. El Ni\~no/La Ni\~na affects many regions of the globe and within each high-risk region some industries benefit from extreme events (such as reinsurers who historically face fewer losses thanks to suppressed hurricane activity during extreme El Ni\~no) while others suffer. Direct risk trades between those groups would contribute to price discovery and provide sustainable liquidity.
 
 \paragraph{Cite negative relationship with hurricanes}
-Great deal of competition driving prices lower, if they are allowed to entry.
+Great deal of competition driving prices lower, if they are allowed entry.
 Holders of hurricane risk likely to remain speculators because ENSO is not a perfect hedge 
 But good portfolio effects (even if it's not included as a hedge)
+
+
+\subsection{Balanced hedging}
+
+DISSREF estimates El Ni\~no/La Ni\~na's economic cost of this teleconnection, finding:
+\begin{itemize} 
+\item ENSO risk is large enough in absolute terms to justify formal risk markets;
+\item large pools of ENSO risk offset one another in time and space, suggesting that ENSO markets could sustain balanced, direct trading among hedgers; and 
+\item ENSO creates a pool of economic risk that is comparable to those underlying some large futures markets today.
+\end{itemize}
 
 \subsection{Considerations regarding feasibility of a traded market - The paradox of liquidity}
 Important research question: Does information about ENSO change sufficiently frequently to warrant trading? Beyond what we can tackle here.
@@ -438,9 +499,7 @@ The prices in table \ref{tab:pricesOctSub} and [ONLINE] only reflect the underly
 
 \subsubsection{Should government finance the startup?}
 
+\bibliographystyle{dcu}
 \bibliography{References/references}
-\bibliographystyle{plainnat}
-
-
 
 \end{document}

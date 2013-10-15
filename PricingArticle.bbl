@@ -1,114 +1,120 @@
-\begin{thebibliography}{16}
-\providecommand{\natexlab}[1]{#1}
-\providecommand{\url}[1]{\texttt{#1}}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi: #1}\else
-  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+\begin{thebibliography}{xx}
 
-\bibitem[Ashok et~al.(2007)Ashok, Behera, Rao, Weng, and
-  Yamagata]{ashok2007Nino}
-Karumuri Ashok, Swadhin~K Behera, Suryachandra~A Rao, Hengyi Weng, and Toshio
-  Yamagata.
-\newblock {El Ni\~no Modoki} and its possible teleconnection.
-\newblock \emph{Journal of Geophysical Research: Oceans (1978--2012)},
-  112\penalty0 (C11), 2007.
+\harvarditem[Ashok et~al.]{Ashok, Behera, Rao, Weng \harvardand\
+  Yamagata}{2007}{ashok2007Nino}
+Ashok, K., Behera, S.~K., Rao, S.~A., Weng, H. \harvardand\ Yamagata, T.
+  \harvardyearleft 2007\harvardyearright .
+\newblock {El Ni\~no Modoki} and its possible teleconnection, {\em Journal of
+  Geophysical Research: Oceans (1978--2012)} {\bf 112}(C11).
 
-\bibitem[Barnston et~al.(1997)Barnston, Chelliah, and
-  Goldenberg]{barnston1997documentation}
-A.G. Barnston, M.~Chelliah, and S.B. Goldenberg.
+\harvarditem{Bank}{2013}{worldBank2013limpopo}
+Bank, W.  \harvardyearleft 2013\harvardyearright .
+\newblock Mozambique: {World Bank} approves emergency funds to improve
+  resilience of water infrastructure following extreme flooding in {Limpopo
+  River Basin}.
+
+\harvarditem[Barnston et~al.]{Barnston, Chelliah \harvardand\
+  Goldenberg}{1997}{barnston1997documentation}
+Barnston, A., Chelliah, M. \harvardand\ Goldenberg, S.  \harvardyearleft
+  1997\harvardyearright .
 \newblock Documentation of a highly {ENSO}-related {SST} region in the
-  equatorial {Pacific}.
-\newblock \emph{Atmosphere Ocean}, 35\penalty0 (3):\penalty0 367, 1997.
+  equatorial {Pacific}, {\em Atmosphere Ocean} {\bf 35}(3):~367.
 
-\bibitem[Coelho et~al.(2004)Coelho, Pezzulli, Balmaseda, Doblas-Reyes, and
-  Steph{ENSO}n]{coelho2004forecast}
-CAS Coelho, S~Pezzulli, M~Balmaseda, FJ~Doblas-Reyes, and DB~Steph{ENSO}n.
+\harvarditem[Coelho et~al.]{Coelho, Pezzulli, Balmaseda, Doblas-Reyes
+  \harvardand\ Steph{ENSO}n}{2004}{coelho2004forecast}
+Coelho, C., Pezzulli, S., Balmaseda, M., Doblas-Reyes, F. \harvardand\
+  Steph{ENSO}n, D.  \harvardyearleft 2004\harvardyearright .
 \newblock Forecast calibration and combination: A simple {Bayesian} approach
-  for {ENSO}.
-\newblock \emph{Journal of Climate}, 17\penalty0 (7):\penalty0 1504--1516,
-  2004.
+  for {ENSO}, {\em Journal of Climate} {\bf 17}(7):~1504--1516.
 
-\bibitem[Khalil et~al.(2007)Khalil, Kwon, Lall, Miranda, and
-  Skees]{khalil2007Nino}
-A.F. Khalil, H.~Kwon, U.~Lall, M.J. Miranda, and J.~Skees.
+\harvarditem{IPCC}{2013}{ipcc2013fifthReport}
+IPCC  \harvardyearleft 2013\harvardyearright .
+\newblock Working group {I} contribution to the {IPCC} fifth assessment report,
+  climate change 2013: The physical science basis.
+\newblock Intergovernmental Panel on Climate Change.
+
+\harvarditem[Khalil et~al.]{Khalil, Kwon, Lall, Miranda \harvardand\
+  Skees}{2007}{khalil2007Nino}
+Khalil, A., Kwon, H., Lall, U., Miranda, M. \harvardand\ Skees, J.
+  \harvardyearleft 2007\harvardyearright .
 \newblock {El Ni\~no}-{Southern Oscillation}-based index insurance for floods:
-  Statistical risk analyses and application to {Peru}.
-\newblock \emph{Water Resources Research}, 43\penalty0 (10):\penalty0 10416,
-  2007.
+  Statistical risk analyses and application to {Peru}, {\em Water Resources
+  Research} {\bf 43}(10):~10416.
 
-\bibitem[Kurtov(2010)]{kurtov2010investing}
-A.~Kurtov, editor.
-\newblock \emph{Investing in Insurance Risk: Insurance-Linked Securities - A
-  Practitioner's Perspective}.
-\newblock Risk Books, June 2010.
+\harvarditem[Lagos et~al.]{Lagos, Silva, Nickl \harvardand\
+  Mosquera}{2008}{lagos2008nino}
+Lagos, P., Silva, Y., Nickl, E. \harvardand\ Mosquera, K.  \harvardyearleft
+  2008\harvardyearright .
+\newblock El {N}i{\~n}o-related precipitation variability in {Per{\'u}}, {\em
+  Advances in Geosciences} {\bf 14}:~231--237.
 
-\bibitem[Luo et~al.(2007)Luo, Wood, and Pan]{luo2007bayesian}
-Lifeng Luo, Eric~F Wood, and Ming Pan.
+\harvarditem[Luo et~al.]{Luo, Wood \harvardand\ Pan}{2007}{luo2007bayesian}
+Luo, L., Wood, E.~F. \harvardand\ Pan, M.  \harvardyearleft
+  2007\harvardyearright .
 \newblock {Bayesian} merging of multiple climate model forecasts for seasonal
-  hydrological predictions.
-\newblock \emph{Journal of Geophysical Research: Atmospheres}, 112\penalty0
-  (D10), 2007.
+  hydrological predictions, {\em Journal of Geophysical Research: Atmospheres}
+  {\bf 112}(D10).
 
-\bibitem[Reynolds(1988)]{reynolds1988real}
-Richard~W Reynolds.
-\newblock A real-time global sea surface temperature analysis.
-\newblock \emph{Journal of Climate}, 1\penalty0 (1):\penalty0 75--86, 1988.
+\harvarditem{Reynolds}{1988}{reynolds1988real}
+Reynolds, R.~W.  \harvardyearleft 1988\harvardyearright .
+\newblock A real-time global sea surface temperature analysis, {\em Journal of
+  Climate} {\bf 1}(1):~75--86.
 
-\bibitem[Reynolds and Marsico(1993)]{reynolds1993improved}
-Richard~W Reynolds and Diane~C Marsico.
-\newblock An improved real-time global sea surface temperature analysis.
-\newblock \emph{Journal of Climate}, 6\penalty0 (1):\penalty0 114--119, 1993.
+\harvarditem{Reynolds \harvardand\ Marsico}{1993}{reynolds1993improved}
+Reynolds, R.~W. \harvardand\ Marsico, D.~C.  \harvardyearleft
+  1993\harvardyearright .
+\newblock An improved real-time global sea surface temperature analysis, {\em
+  Journal of Climate} {\bf 6}(1):~114--119.
 
-\bibitem[Reynolds and Smith(1994)]{reynolds1994improved}
-Richard~W Reynolds and Thomas~M Smith.
+\harvarditem[Reynolds et~al.]{Reynolds, Rayner, Smith, Stokes \harvardand\
+  Wang}{2002}{reynolds2002improved}
+Reynolds, R.~W., Rayner, N.~A., Smith, T.~M., Stokes, D.~C. \harvardand\ Wang,
+  W.  \harvardyearleft 2002\harvardyearright .
+\newblock An improved in situ and satellite {SST} analysis for climate, {\em
+  Journal of Climate} {\bf 15}(13):~1609--1625.
+
+\harvarditem{Reynolds \harvardand\ Smith}{1994}{reynolds1994improved}
+Reynolds, R.~W. \harvardand\ Smith, T.~M.  \harvardyearleft
+  1994\harvardyearright .
 \newblock Improved global sea surface temperature analyses using optimum
-  interpolation.
-\newblock \emph{Journal of Climate}, 7\penalty0 (6):\penalty0 929--948, 1994.
+  interpolation, {\em Journal of Climate} {\bf 7}(6):~929--948.
 
-\bibitem[Reynolds et~al.(2002)Reynolds, Rayner, Smith, Stokes, and
-  Wang]{reynolds2002improved}
-Richard~W Reynolds, Nick~A Rayner, Thomas~M Smith, Diane~C Stokes, and Wanqiu
-  Wang.
-\newblock An improved in situ and satellite {SST} analysis for climate.
-\newblock \emph{Journal of Climate}, 15\penalty0 (13):\penalty0 1609--1625,
-  2002.
+\harvarditem{Skees \harvardand\ Murphy}{2009}{skees2009enso}
+Skees, J. \harvardand\ Murphy, A.  \harvardyearleft 2009\harvardyearright .
+\newblock {ENSO Business Interruption Index Insurance} for catastrophic
+  flooding in {Piura, Peru}.
+\newblock {GlobalAgRisk, Inc.}
 
-\bibitem[Smith and Reynolds(2003)]{smith2003extended}
-Thomas~M Smith and Richard~W Reynolds.
+\harvarditem{Smith \harvardand\ Reynolds}{2003}{smith2003extended}
+Smith, T.~M. \harvardand\ Reynolds, R.~W.  \harvardyearleft
+  2003\harvardyearright .
 \newblock Extended reconstruction of global sea surface temperatures based on
-  {COADS} data (1854-1997).
-\newblock \emph{Journal of Climate}, 16\penalty0 (10):\penalty0 1495--1510,
-  2003.
+  {COADS} data (1854-1997), {\em Journal of Climate} {\bf 16}(10):~1495--1510.
 
-\bibitem[Smith and Reynolds(2004)]{smith2004improved}
-Thomas~M Smith and Richard~W Reynolds.
-\newblock Improved extended reconstruction of {SST} (1854-1997).
-\newblock \emph{Journal of Climate}, 17\penalty0 (12):\penalty0 2466--2477,
-  2004.
+\harvarditem{Smith \harvardand\ Reynolds}{2004}{smith2004improved}
+Smith, T.~M. \harvardand\ Reynolds, R.~W.  \harvardyearleft
+  2004\harvardyearright .
+\newblock Improved extended reconstruction of {SST} (1854-1997), {\em Journal
+  of Climate} {\bf 17}(12):~2466--2477.
 
-\bibitem[Smith et~al.(2008)Smith, Reynolds, Peterson, and
-  Lawrimore]{smith2008improvements}
-Thomas~M Smith, Richard~W Reynolds, Thomas~C Peterson, and Jay Lawrimore.
+\harvarditem[Smith et~al.]{Smith, Reynolds, Peterson \harvardand\
+  Lawrimore}{2008}{smith2008improvements}
+Smith, T.~M., Reynolds, R.~W., Peterson, T.~C. \harvardand\ Lawrimore, J.
+  \harvardyearleft 2008\harvardyearright .
 \newblock Improvements to {NOAA}'s historical merged land-ocean surface
-  temperature analysis (1880-2006).
-\newblock \emph{Journal of Climate}, 21\penalty0 (10):\penalty0 2283--2296,
-  2008.
+  temperature analysis (1880-2006), {\em Journal of Climate} {\bf
+  21}(10):~2283--2296.
 
-\bibitem[{Stan Development Team}(2013)]{stan2013}
-{Stan Development Team}.
-\newblock Stan: A {C++} library for probability and sampling, version 1.3,
-  2013.
-\newblock URL \url{http://mc-stan.org/}.
+\harvarditem{{Stan Development Team}}{2013}{stan2013}
+{Stan Development Team}  \harvardyearleft 2013\harvardyearright .
+\newblock Stan: A {C++} library for probability and sampling, version 1.3.
+\newline\harvardurl{http://mc-stan.org/}
 
-\bibitem[{The Economist}(2013)]{econ2013ETS}
-{The Economist}.
-\newblock Carbon trading: Ets, rip?
-\newblock \emph{The Economist}, {April 20} 2013.
-
-\bibitem[Xue et~al.(2003)Xue, Smith, and Reynolds]{xue2003interdecadal}
-Yan Xue, Thomas~M Smith, and Richard~W Reynolds.
-\newblock Interdecadal changes of 30-yr {SST} normals during 1871-2000.
-\newblock \emph{Journal of Climate}, 16\penalty0 (10):\penalty0 1601--1612,
-  2003.
+\harvarditem[Xue et~al.]{Xue, Smith \harvardand\
+  Reynolds}{2003}{xue2003interdecadal}
+Xue, Y., Smith, T.~M. \harvardand\ Reynolds, R.~W.  \harvardyearleft
+  2003\harvardyearright .
+\newblock Interdecadal changes of 30-yr {SST} normals during 1871-2000, {\em
+  Journal of Climate} {\bf 16}(10):~1601--1612.
 
 \end{thebibliography}

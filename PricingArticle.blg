@@ -1,46 +1,65 @@
 This is BibTeX, Version 0.99d (TeX Live 2010)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: PricingArticle.aux
-The style file: plainnat.bst
+The style file: dcu.bst
 Database file #1: References/references.bib
-You've used 16 entries,
-            2773 wiz_defined-function locations,
-            690 strings with 7565 characters,
-and the built_in function-call counts, 7494 in all, are:
-= -- 657
-> -- 446
-< -- 8
-+ -- 151
-- -- 135
-* -- 649
-:= -- 1165
-add.period$ -- 48
-call.type$ -- 16
-change.case$ -- 92
-chr.to.int$ -- 16
-cite$ -- 32
-duplicate$ -- 322
-empty$ -- 614
-format.name$ -- 159
-if$ -- 1540
-int.to.chr$ -- 1
-int.to.str$ -- 1
-missing$ -- 15
-newline$ -- 88
-num.names$ -- 65
-pop$ -- 170
+I was expecting a `,' or a `}'---line 28 of file References/references.bib
+ : 
+ : note={Press release, 27 September 2013}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 4019 of file References/references.bib
+ :  @unpublished{ipcc2013fifthReport
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 4806 of file References/references.bib
+ :  @article{khalil2007nino
+ :                         ,
+I'm skipping whatever remains of this entry
+"{" immediately follows a field name---line 6007 of file References/references.bib
+ :  author
+ :        {Kimball, R.},
+I'm skipping whatever remains of this entry
+Warning--empty note in worldBank2013limpopo
+You've used 18 entries,
+            2921 wiz_defined-function locations,
+            743 strings with 7946 characters,
+and the built_in function-call counts, 83644 in all, are:
+= -- 13693
+> -- 1171
+< -- 0
++ -- 6586
+- -- 357
+* -- 7317
+:= -- 16732
+add.period$ -- 38
+call.type$ -- 18
+change.case$ -- 252
+chr.to.int$ -- 18
+cite$ -- 19
+duplicate$ -- 227
+empty$ -- 537
+format.name$ -- 422
+if$ -- 14994
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 14
+newline$ -- 78
+num.names$ -- 189
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 77
+purify$ -- 270
 quote$ -- 0
-skip$ -- 246
+skip$ -- 234
 stack$ -- 0
-substring$ -- 311
-swap$ -- 18
-text.length$ -- 0
+substring$ -- 19433
+swap$ -- 28
+text.length$ -- 252
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 171
-warning$ -- 0
-while$ -- 68
+type$ -- 72
+warning$ -- 1
+while$ -- 400
 width$ -- 0
-write$ -- 212
+write$ -- 255
+(There were 4 error messages)
