@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 OCT 2013 19:09
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 OCT 2013 19:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**PricingArticle.tex
-(./PricingArticle.tex
+**PricingArticlePart1.tex
+(./PricingArticlePart1.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
 rman-x-2009-06-19, ngerman-x-2009-06-19, ancientgreek, ibycus, arabic, armenian
@@ -308,8 +308,8 @@ File: lipsum.dtx 2005/01/26 v1.0 150 paragraphs of Lorem Ipsum dummy text
 (/usr/local/texlive/2010/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write4
 
-Excluding comment 'comment') (./PricingArticle.aux)
-\openout1 = `PricingArticle.aux'.
+Excluding comment 'comment') (./PricingArticlePart1.aux)
+\openout1 = `PricingArticlePart1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
@@ -458,12 +458,11 @@ Missing character: There is no “ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [4]
+ [4] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
-[5]
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no “ in font cmr10!
@@ -476,221 +475,27 @@ Missing character: There is no ™ in font cmr10!
 Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
- [6] [7]
-<graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf, id=32, 722.7pt x 433.6
-2pt>
-File: graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf Graphic file (type
- pdf)
- <use graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf> [8]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ¦ in font cmr10!
- [9 <./graphics/Pricingfigs/CompareOISSTandERRSTbaselines.pdf>]
-<graphics/Pricingfigs/optionParamsByMonth.pdf, id=52, 505.89pt x 361.35pt>
-File: graphics/Pricingfigs/optionParamsByMonth.pdf Graphic file (type pdf)
-
-<use graphics/Pricingfigs/optionParamsByMonth.pdf>
-<graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf, id=53, 505.89pt x 
-361.35pt>
-File: graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf Graphic file (
-type pdf)
- <use graphics/Pricingfigs/payoutExamplemonth10contractType1.pdf>
-[10]
-<graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf, id=57, 505.89pt x 7
-22.7pt>
-File: graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf Graphic file (t
-ype pdf)
- <use graphics/Pricingfigs/optionPricesWithVariousDistMonth.pdf>
-
-LaTeX Warning: Float too large for page by 11.46898pt on input line 413.
-
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-[11 <./graphics/Pricingfigs/optionParamsByMonth.pdf>]
-<graphics/Pricingfigs/SST_table_march_ex.png, id=70, 645.41125pt x 548.0475pt>
-File: graphics/Pricingfigs/SST_table_march_ex.png Graphic file (type png)
-
-<use graphics/Pricingfigs/SST_table_march_ex.png> [12 <./graphics/Pricingfigs/p
-ayoutExamplemonth10contractType1.pdf>] [13 <./graphics/Pricingfigs/optionPrices
-WithVariousDistMonth.pdf>] [14 <./graphics/Pricingfigs/SST_table_march_ex.png (
-PNG copy)>]
-Overfull \hbox (3.49039pt too wide) detected at line 462
-[]
- []
-
-(./Tables/regOfConditionalsTablemonth10.tex) [15]
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFsIllustrativeExamplesTradConfigFull
-' on page 16 undefined on input line 491.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFsIllustrativeExamplesTradConfigSimp
-le' on page 16 undefined on input line 491.
-
-
-<graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull.pdf, id
-=103, 578.16pt x 578.16pt>
-File: graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull.pd
-f Graphic file (type pdf)
-
-<use graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull.pdf
->
-<graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigSimple.pdf, 
-id=104, 578.16pt x 578.16pt>
-File: graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigSimple.
-pdf Graphic file (type pdf)
-
-<use graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigSimple.p
-df>
-<graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf, id=105, 57
-8.16pt x 1445.4pt>
-File: graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf Graphi
-c file (type pdf)
-
-<use graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf>
-
-LaTeX Warning: Float too large for page by 56.9516pt on input line 517.
-
-[16] [17 <./graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigF
-ull.pdf>] [18 <./graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradCo
-nfigSimple.pdf>]
-<graphics/Pricingfigs/conditionalCDFs07to09TraditionalCDFconfig.pdf, id=131, 57
-8.16pt x 1445.4pt>
-File: graphics/Pricingfigs/conditionalCDFs07to09TraditionalCDFconfig.pdf Graphi
-c file (type pdf)
-
-<use graphics/Pricingfigs/conditionalCDFs07to09TraditionalCDFconfig.pdf>
-
-LaTeX Warning: Float too large for page by 56.9516pt on input line 523.
-
-
-<graphics/Pricingfigs/conditionalCDFs10to12TraditionalCDFconfig.pdf, id=132, 57
-8.16pt x 1445.4pt>
-File: graphics/Pricingfigs/conditionalCDFs10to12TraditionalCDFconfig.pdf Graphi
-c file (type pdf)
-
-<use graphics/Pricingfigs/conditionalCDFs10to12TraditionalCDFconfig.pdf>
-
-LaTeX Warning: Float too large for page by 56.9516pt on input line 529.
-
-File: graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf Graphi
-c file (type pdf)
-<use graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf>
-
-LaTeX Warning: Float too large for page by 56.9516pt on input line 535.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 539.
-
-(./Tables/conditionalsLNTablemonth10sub.tex)
-Missing character: There is no â in font cmbx10!
-Missing character: There is no € in font cmbx10!
-Missing character: There is no “ in font cmbx10!
- [19] [20 <./graphics/Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig.pdf
->] [21 <./graphics/Pricingfigs/conditionalCDFs07to09TraditionalCDFconfig.pdf>] 
-[22 <./graphics/Pricingfigs/conditionalCDFs10to12TraditionalCDFconfig.pdf>] [23
-]
-Overfull \vbox (36.52011pt too high) has occurred while \output is active []
-
-
-[24] (./PricingArticle.bbl [25]) [26] (./PricingArticle.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[6] [7] (./PricingArticlePart1.bbl) [8] (./PricingArticlePart1.aux) ) 
 Here is how much of TeX's memory you used:
- 4386 strings out of 493747
- 62350 string characters out of 3143546
- 236468 words of memory out of 3000000
- 7537 multiletter control sequences out of 15000+200000
- 17802 words of font info for 65 fonts, out of 3000000 for 9000
+ 4263 strings out of 493747
+ 57551 string characters out of 3143546
+ 218617 words of memory out of 3000000
+ 7435 multiletter control sequences out of 15000+200000
+ 17450 words of font info for 64 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,11n,32p,1110b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
-10/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2010/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2010/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on PricingArticle.pdf (26 pages, 2078582 bytes).
+ 38i,6n,32p,1115b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/loca
+l/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local
+/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/
+texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texli
+ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on PricingArticlePart1.pdf (8 pages, 121876 bytes).
 PDF statistics:
- 233 PDF objects out of 1000 (max. 8388607)
- 162 compressed objects within 2 object streams
+ 59 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

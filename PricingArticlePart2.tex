@@ -1,0 +1,362 @@
+\documentclass[authoryear]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{bm}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{gensymb}
+\usepackage{moresize}
+%\usepackage[round]{natbib}
+\usepackage{natbib}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{url}
+
+\geometry{dvips,paperwidth=8.5in,paperheight=11in,body={6.5in,9.5in},left=1in,
+top=1in}
+\widowpenalty=1000 \clubpenalty=1000
+\renewcommand{\baselinestretch}{1.25}
+
+
+%%This code prevents big figures from being 
+ % See p.105 of "TeX Unbound" for suggested values.
+    % See pp. 199-200 of Lamport's "LaTeX" book for details.
+    %   General parameters, for ALL pages:
+    \renewcommand{\topfraction}{0.9}  % max fraction of floats at top
+    \renewcommand{\bottomfraction}{0.8} % max fraction of floats at bottom
+    %   Parameters for TEXT pages (not float pages):
+    \setcounter{topnumber}{2}
+    \setcounter{bottomnumber}{2}
+    \setcounter{totalnumber}{4}     % 2 may work better
+    \setcounter{dbltopnumber}{2}    % for 2-column pages
+    \renewcommand{\dbltopfraction}{0.9} % fit big float above 2-col. text
+    \renewcommand{\textfraction}{0.07}  % allow minimal text w. figs
+    %   Parameters for FLOAT pages (not text pages):
+    \renewcommand{\floatpagefraction}{0.7}  % require fuller float pages
+  % N.B.: floatpagefraction MUST be less than topfraction !!
+    \renewcommand{\dblfloatpagefraction}{0.7} % require fuller float pages
+
+% Set up the images/graphics package
+\setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+\graphicspath{{graphics/}}
+
+% The following package makes prettier tables.  We're all about the bling!
+\usepackage{booktabs}
+
+% The units package provides nice, non-stacked fractions and better spacing
+% for units.
+\usepackage{units}
+
+% The fancyvrb package lets us customize the formatting of verbatim
+% environments.  We use a slightly smaller font.
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+
+% Small sections of multiple columns
+\usepackage{multicol}
+
+% Provides paragraphs of dummy text
+\usepackage{lipsum}
+
+% Allows within line comments for editing 
+\usepackage{comment}
+
+% These commands are used to pretty-print LaTeX commands
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+%Prints a degree symbol
+\newcommand{\degreesym}{\ensuremath{^\circ}}
+
+
+
+\begin{document}
+
+\title{Pricing ENSO Derivatives Part 2: Supporting ENSO Markets With Pricing Information}
+\date{}  % if the \date{} command is left out, the current date will be used
+%
+
+
+\section{Methods: Understanding ENSO, information and pricing}
+[NEED TO DRASTICALLY CUT THESE REGION ETC. sections]
+\subsection{Data considerations, identifying an index}
+Need to pick:
+\begin{itemize}
+\item Methodology
+\item Region
+\item Absolute or anomalies (not so important here)
+\end{itemize}
+
+\subsubsection{ERSST vs. OISST}
+
+NOAA publishes two primary sea surface temperate indexes. By and large, those indexes tell the same story about El Ni\~no/La Ni\~na.
+
+NOAA's Extended Reconstructed Sea Surface Temperature Index (ERSST) dataset provides a longer record, while NOAA's Optimum Interpolation Sea Surface Temperature Index (OISST) offers finer resolution. 
+
+The key factor distinguishing ERSST from OISST is the use of in-situ and satellite data. With the exception of version 3 [footnote ERRST version 3 included infrared satellite data starting in 1985. NOAA determined that this addition introduced some biases into the index - it tended to suggest temperatures that were too cold by a factor of .01 deg C. NOAA consequently removed satellite data (although it retains in situ data collected via satellite) from the calculation of ERSST version 3b, the current standard.], all the ERSST iterations (1,2, and 3b, the iteration used here) use in-situ measurement exclusively\cite{smith2004improved}\cite{smith2003extended}\cite{smith2008improvements}.
+
+Monthly anomalies in the ERSST version 3b index are measured relative to a 1971-2000 base period\cite{xue2003interdecadal}. NOAA releases monthly ERSST estimates with a resolution of two degrees across the four ENSO regions. While the primary index record that NOAA posts to its websites goes back to 1950, monthly ERSST data are available from 1854 on.
+
+OISST, currently at version 2, combines in situ SST measurements, daytime and nighttime satellite data readings, and data from sea ice cover simulations. The satellite data is adjusted statistically for natural sources of bias, like cloud cover and atmospheric water vapor\cite{reynolds2002improved} \cite{reynolds1994improved} \cite{reynolds1993improved} \cite{reynolds1988real}. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/CompareOISSTandERRSTbaselines}
+  \caption{Comparing OISST and ERSST monthly baselines}
+   \label{fig:baeslinesOIER}
+\end{figure*}
+
+Figure \ref{fig:baeslinesOIER} provides the baseline monthly values that NOAA uses to calibrate anomalies in OISST and ERSST. Note OISSTs tendency toward colder SSTs. The cold bias in satellite data is a great concern in the climate literature and is noted in all the index construction papers on ERSST and OISST cited above.
+
+Note also that February/March and June/July are inflection periods, moving both indexes from cold to warm phases (the former months) and back (the latter months). The baseline SST fluctuations over these two windows is dramatic. I suspect that those months will consequently host very active trading, if traded ENSO markets launch. Those are also likely to be the months where climate expertise and proprietary data will provide the largest edge to traders. The possibility of information asymmetries in those months may undermine the volume boost that traded markets might otherwise get from increased volatility. \index{sea-surface temperature!phases}
+
+\paragraph{Result}
+ERSST
+
+\subsubsection{Ni\~no region}
+Ni\~no 1.2 is the best predictor of catastrophic flooding in Peru and Ecuador, El Ni\~no's flagship impact. However, NMS generally mark ENSO anomalies using the Ni\~no 3.4 region\footnote{Ni\~no 3.4, straddles two separate regions, Ni\~no 3 and Ni\~no 4.} (roughly, from $5\degreesym$N to $5\degreesym$S and from $120\degreesym$ to $170\degreesym$W), which stretches across the central Pacific\cite{khalil2007Nino} \cite{barnston1997documentation}. Both regions, Ni\~no 1.2 and the Ni\~no 3.4, have a very high correlation during extreme anomalies. But Ni\~no 3.4 is generally considered a better proxy for the worldwide teleconnections associated with ENSO. In particular,  it does a better job capturing ENSO anomalies with different geographic signatures. During the 1972/1973 El Ni\~no, for example, most of the sea-surface temperature warming occurred in the central Pacific, closer to Ni\~no 3.4. El Ni\~no events focused on the Central Pacific are also called \emph{Modoki} Ni\~nos and can have large global impacts\cite{ashok2007Nino}.
+
+\paragraph{Result}
+use Ni\~no 3.4…
+
+\subsubsection{Anomalies vs. absolute SST measurements}
+NOAA releases each of its datasets as departures from monthly averages (anomalies) and absolute degrees Celsius. Its not immediately clear which format is better for financial contracts.
+
+Presenting contracts in terms of anomalies facilitates interpretation of actual El Ni\~no/La Ni\~na events, since most major meteorological organizations define those events in terms of persistent monthly anomalies. Indeed, many forecasts of SSTs (like those from the ABM and IRI) are only provided in terms of anomalies. 
+
+The primary disadvantage of anomalies is that they have been, and will continue to be, subject to revision as underlying SSTs drift over time. 
+
+[THERE IS] a possible [BUT WEAK] link between climate change and higher Pacific SSTs. 
+
+To the extent that such trends continue, the index may revise its baseline and the interpretation of anomalies may become less clear. The ONI index, which NOAA uses to define El Ni\~no/La Ni\~na already uses a rolling window for its monthly base periods.
+
+The weather traders I interviewed [give context] suggested that the temperature derivatives are currently subject to annual revision. The practice has not been a problem for traders. Nevertheless, there may be advantages to using absolute SSTs. Absolute measurements will directly incorporate any underlying shifts in the index, allowing, for example, traders to simply express theories about the long-term trends in the index. Those theories and, by proxy, the market's judgment of long-term climate change might be obscured in an anomaly-based contract.
+
+\subsection{Developing a prototypical contract}
+According to Dr. Andrew Watkins of the Australian Bureau of Meteorology (ABM), October is the single most decisive month for El Ni\~no/La Ni\~na worldwide. It is consequently the month I use for most of the examples in this chapter.
+
+
+I am most concerned with extreme El Ni\~no/La Ni\~na, so I've chosen to structure the payout functions for my example options around events between one and three standard deviations away from the monthly mean. More specifically, payments on the options begin at one standard deviation\footnote{This is also called the trigger or attachment point.} above or below the monthly average (for El Ni\~no coverage/calls and La Ni\~na coverage/puts respectively) and payments reach one hundred percent of the notional value (or sum insured) at three standard deviations above or below the monthly average. Figure \ref{fig:optionParamsByMonth} shows the average monthly value for Ni\~no 3.4 in black. The red and blue bands show the index values for each month that would trigger a payment on calls and puts respectively. \index{risk management contracts!payout function}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/optionParamsByMonth}
+  \caption{Index values for El Ni\~no (red) and La Ni\~na (blue) events between one and three standard deviations away from monthly average}
+   \label{fig:optionParamsByMonth}
+\end{figure*}
+
+Within those ranges, I use linear pricing such that an index value halfway across the red band in figure \ref{fig:optionParamsByMonth} (i.e. halfway between the the trigger and max payout point) would obligate a payout that is half of the sum insured on a call/El Ni\~no contract. The full linear function for October El Ni\~no is shown in figure \ref{fig:payouyt10callex}. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/payoutExamplemonth10contractType1}
+  \caption{Payout function for call option on October SST for Ni\~no 3.4 ERSST.3b covering index values between one and three standard deviations above the baseline}
+   \label{fig:payouyt10callex}
+\end{figure*}
+
+As an example, suppose that I bought USD $100$ of coverage for USD $10$ against October El Ni\~no. If actual October SST was halfway across the red band, or $28.74^{\circ}\mathrm{C}$, I would receive USD $50$.
+
+In practice, GlobalAgRisk found that hedgers (and speculators) prefer a payout function that offers a minimum payout in the event that the index reaches just above the trigger. For example, an index value that just barely crosses into the red in \ref{fig:optionParamsByMonth} might trigger a payout of $5$ percent on an El Ni\~no/call contract, rather than the tiny payout suggested the kind of linear function in figure \ref{fig:payouyt10callex}.
+
+Some potential clients also expressed interest in a more customized payout function consisting of steps usually shaped around historical events e.g. a 25 percent payout for the 1972/1973 magnitude event and a 75 percent for a 1997/1998 magnitude event.
+\subsubsection{Result}
+suggest 1-3 s.d. coverage, put and call
+
+\subsection{Distribution}
+
+In figure \ref{fig:optionPricesWithVariousDistMonth}, I show the prices generated (in USD of premium per USD 100 of nominal coverage) from the random samples from fit distributions. The figure includes burn prices and prices from samples taken from kernel density smoothers fit over each month. 
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/optionPricesWithVariousDistMonth}
+  \caption{Expected price for options on Ni\~no 3.4 by month, based on simulations from various distributions}
+   \label{fig:optionPricesWithVariousDistMonth}
+\end{figure*}
+
+The prices from the various distributions are, with one prominent exception, close together. On the El Ni\~no side, the highest and lowest prices are mostly within 125 basis points of one another in any given month. On the La Ni\~na side, that spread is slightly larger at roughly 150 basis point, but only between April and June.
+
+The Weibull, is the one model challenging this consensus. The prices from the Weibull samples are clearly distinct from the rest of the group - almost doubling the price of La Ni\~na coverage relative to the rest of the group. The Weibull sample suggested the lowest prices for El Ni\~no coverage, albeit by a much smaller margin than for La Ni\~na. That is understandable given the distribution's heavy left tail.
+
+Apart from the Weibull, the samples drawn from the kernel density smoother suggests the second highest prices for both El Ni\~no and La Ni\~na coverage. The burn prices are in the middle of the pack.
+\subsubsection{Result}
+robust to several distributional assumptions. 
+Using normal has advantages
+
+\subsection{Picking a forecast}
+Forecasts, IRI’s ensemble, and error around the ensemble forecast
+\subsubsection{Result 1}
+IRI ensemble good foundation for baseline
+
+\subsection{Pricing ensemble error}
+
+Extreme El Ni\~no/La Ni\~na events emerge over time, with forecasts giving us even more useful hints in the months leading up to a given event. As those hints emerge, we change our beliefs around the likelihood of an event. The price of El Ni\~no/La Ni\~na risk protection should change to reflect those beliefs.
+
+In this section, we present statistical simulations of monthly Ni\~no 3.4 sea surface temperatures conditioned on average forecasts released by Colombia University's International Research Institute for Climate and Society (IRI). We use those simulations to update the prices of risk management contracts as new forecast information becomes available.
+
+Every month since mid-2002, IRI has collected forecasts issued by major centers of climatological research. Figure \ref{fig:forecastExamples} shows IRI the forecasts as of March 2013.
+
+\begin{figure}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/SST_table_march_ex}
+  \caption{Example of IRI's collected forecasts - March 2013}
+   \label{fig:forecastExamples}
+\end{figure}
+
+The work presented here links those forecasts and observed SSTs through a Bayesian regression that uses the long terms climate record as a prior. If the regression indicates that the forecasts have no predictive power, then all the simulated SSTs from the regression will simply reflect monthly historical averages. 
+
+\subsubsection{Modeling the link between forecasts and SSTs}
+IRI provides Nino 3.4 SST forecasts are over 3 month rolling windows. However, that format is unlikely to satisfy hedgers. Many would prefer to mix and match the months closest to them. Existing El Ni\~no insurance is based on a Novermber/December average, but some clients in Peru expressed interest in protection against individual months. 
+
+So, for the sake of providing ENSO pricing information of most direct relevance to likely traded markets, we have linked the smoothed IRI forecasts to monthly measured SST. For an example of how we made this link, imagine that it is March and a hedger is interested in predicting October Ni\~no 3.4 SST. IRI's forecasts (given in terms of anomalies) are smoothed using three-month blocks, as in figure \ref{fig:forecastExamples}. In that figure, there are three forecasts that contain information relevant to October SSTs - \emph{ASO}, \emph{SON}, and \emph{OND}. 
+
+There are myriad ways of combining both individual and average forecasts for those three windows in a regression, but for the sake of simplicity in this section we use as the independent variable the average of IRI model averages covering October. 
+
+So, in the above example, I would look at all the model averages made in March for \emph{ASO}, \emph{SON}, and \emph{OND}, taking the average of those three numbers in any given year. I did the same for every month across that months valuable forecasts. That forecast average then conditions the long-term average anomaly for October\footnote{I used anomalies rather than absolute SSTs to match IRI's convention.}. IRI issues forecasts between 2 and 10 months prior to any given target month. For example, October SST forecasts begin in December and end in September. Since I want pricing for every month, from the vantage-point of every preceding month with IRI forecasts, I need to run a total of $108$ separate regressions. 
+
+\begin{equation}
+\begin{array}{lcl}
+\mbox{Monthly Ni\~no 3.4 ERSST.3b anomalies}_{month,year} & \sim & \mathcal{N}( \hat{y}_{month,forecast month,year}, \sigma_{y_{month,forecast month}}^2 )\\
+\hat{y}_{month,forecast month,year} & = & a_{month,forecast month} \\
+&& + b_{month,forecast month}*\\
+&& \mbox{average of IRI average forecasts}_{month,forecast month}\\
+\end{array}
+\label{eqn:conditionalEstEqn}
+\end{equation}
+
+Those regressions, specified in equation \ref{eqn:conditionalEstEqn}, are a simplified version of a procedure that climate scientists and statisticians have recently used to merge ENSO forecasts\cite{luo2007bayesian}\cite{coelho2004forecast}. Note first that I do not know the predictive power of IRI average forecasts. The parameter $\sigma_{y_{month,forecast month}}^2$ accounts for that forecasting uncertainty. It will be large where IRI average forecasts have shown low historical predictive power. Note also that this Bayesian regression will not be biased by non-stationarity. The underlying parameters are not assumed to be stationary, since they are realizations of an unknown distribution.
+
+The prior probabilities I placed on model parameters are shown in equation set \ref{eqn:priorsconditionalEstEqn}. There are weakly informative priors on $b$ and $\sigma_{y}$, allowing them to move easily across a wide range of possible values in response to the data. $a$ by contrast has a strongly informative prior based on historical data. This means that if $b$, the parameter indicating the predictive power of IRI's average forecasts, is at or near zero, then the resulting simulations from the posterior distribution will simply reflect long term trends in monthly SSTs.
+
+\begin{equation}
+\begin{array}{lcl}
+a_{month,forecast month}  & \sim & \mathcal{N}(\mbox{mean anomalies}_{month}, \mbox{st dev anomalies}_{month}) \\
+b_{month,forecast month}  & \sim & \mathcal{N}(0, 100) \\
+\sigma_{y_{month,forecast month}}^2 & \sim  &\mbox{Inv gamma}(0.001, 0.001) \\
+\end{array}
+\label{eqn:priorsconditionalEstEqn}
+\end{equation}
+
+\subsubsection{Dynamic pricing based on model results}
+The table below contains regression results for October SSTs, predicted between the preceding December and August. The regressions were all estimated using parallel Markov Chain Monte Carlo (MCMC) chains, each with 100,000 iterations, 50,000 of which were discarded as a warm-up\cite{stan2013}. 
+
+[CHANGE]
+The $\hat{R}$ on all parameters below and in part Pricing Appendix were 1, indicating convergence on the simulation.
+
+\input{Tables/regOfConditionalsTablemonth10}
+
+Looking at the 2.5th and 97.5th percentile of the distributions for $b$, its clear that the forecasts become more valuable predictors as the year goes on. Going from December to August, the 95 percent probability interval for the forecast parameter, $b$ steadily tightens to a range including 1. This suggest that the correlation between forecasts and eventual SSTs increases throughout the predictive window. As the explanatory value of $b$ increases, $a$ decreases. Just as climate scientists suggested, $a$'s 95 percent probability tightening around 0 after March.
+
+Using the posterior draws of parameter values from these 108 regressions, I simulated SSTs predicted by each possible forecast value between -2 and 2 (forecasts are rounded to one decimal). For example, I took 50,000 posterior draws of $a$, $b$, and $\sigma_{y}^2$ from the regression corresponding to October SSTs predicted by April forecasts. I used each of those 50,000 vectors of three parameters to randomly generate one October SSTs, based on an average April forecast of mild El Ni\~no conditions in the coming October (a forecast value of 0.5.) That left me with 50,000 October SST conditioned on a forecast of 0.5 made in April. I repeated that procedure to produce conditional distributions for SSTs for each month of the year, predicted by a wide range of forecast values, from all possible forecast months. The resulting stochastic catalog allowed me to price El Ni\~no/La Ni\~na risk for any month given any IRI average forecast. 
+
+The empirical distribution functions of those posterior simulations, converted back into absolute SSTs, are shown in figures \ref{fig:conditionalCDFs04to06}, \ref{fig:conditionalCDFs07to09}, \ref{fig:conditionalCDFs10to12}, and \ref{fig:conditionalCDFs01to03}. 
+
+For the sake of clarity, simplified illustrative examples of those figures are are presented in \ref{fig:conditionalCDFsIllustrativeExamplesTradConfigFull} and \ref{fig:conditionalCDFsIllustrativeExamplesTradConfigSimple}.
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull}
+  \caption{Empirical cumulative distribution functions for June and January Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. Only the ECDFs for the nearest and furthest month predictions provided by IRI are shown. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFsIllustrativeExamplesTradConfigFull}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigSimple}
+  \caption{Empirical cumulative distribution functions for June and January Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. Only the ECDFs for the nearest and furthest month predictions provided by IRI and only predictions of large El Ni\~no (+2), La Ni\~na (-2), or neutral conditions (0) are shown. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFsIllustrativeExamplesTradConfigSimple}
+\end{figure*}
+
+In those figures, deeper blue lines indicate colder forecast averages from IRI and deeper red lines indicate warmer forecasts.
+ 
+ % fig:conditionalCDFsJantoJune
+ % fig:conditionalCDFsJultoDec
+
+% \ref{fig:conditionalCDFsJantoJune} and \ref{fig:conditionalCDFsJultoDec}
+
+ % \ref{fig:conditionalCDFs04to06}, \ref{fig:conditionalCDFs07to09}, \ref{fig:conditionalCDFs10to12}, and  \ref{fig:conditionalCDFs01to03}
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig}
+  \caption{Empirical cumulative distribution functions for April through June Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFs04to06}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFs07to09TraditionalCDFconfig}
+  \caption{Empirical cumulative distribution functions for July through September Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFs07to09}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFs10to12TraditionalCDFconfig}
+  \caption{Empirical cumulative distribution functions for October through December Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFs10to12}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \includegraphics[width=\linewidth]{Pricingfigs/conditionalCDFs04to06TraditionalCDFconfig}
+  \caption{Empirical cumulative distribution functions for January through March Ni\~no 3.4 SST conditioned on average IRI ensemble forecasts available for various months. ECDFs are of draws from the posterior predictive distribution of the model specified in equation \ref{eqn:conditionalEstEqn}.}
+   \label{fig:conditionalCDFs01to03}
+\end{figure*}
+
+Notice how the blue and red lines are tightly bound ten months prior to any given target month (down the rightmost column) in figures \ref{fig:conditionalCDFs04to06}, \ref{fig:conditionalCDFs07to09}, \ref{fig:conditionalCDFs10to12}, and \ref{fig:conditionalCDFs01to03}. This indicates that forecasts had little or no predictive power, as warm forecasts were as closely associated with eventual warm conditions as cold forecasts, and visa versa. In some cases, where the blue lines peek above the red, the colder forecasts are actually associated with higher eventual SSTs. The fact that the red and blue lines bunch together as you move left to right across rows in figures \ref{fig:conditionalCDFs04to06}, \ref{fig:conditionalCDFs07to09}, \ref{fig:conditionalCDFs10to12}, and \ref{fig:conditionalCDFs01to03} suggests that the signal from IRI's average forecasts deteriorates as we go further back in the predictive window.
+
+By contrast, two months away from a target month (down the leftmost column of figures \ref{fig:conditionalCDFs04to06}, \ref{fig:conditionalCDFs07to09}, \ref{fig:conditionalCDFs10to12}, and \ref{fig:conditionalCDFs01to03}), forecasts are meaningful. Blue lines sit below red lines. So a warm forecast shifts the distribution of eventual SSTs warmer and visa versa.
+
+The spring predictive barrier is also clear in the figures. The difference between April outcomes, conditioned on particularly cold and warm forecasts made just two months prior, is smaller than the same difference for February SSTs made ten months out. In visual terms, the ECDFs for row April, column t-2 months are more compact than the ECDFs for row February, column t-10 months. In other words, April SSTs show a weaker link to February predictions than February SSTs show to predictions from the preceding April. 
+
+\input{Tables/conditionalsLNTablemonth10sub}
+
+In table \ref{tab:pricesOctSub}, I translated these simulation results into pricing for October La Ni\~na protection (put options on October SST). As before in this chapter, I used a payout function that began one standard deviation below normal and reached 100 percent of the nominal value of the agreement (sum insured) at three standard deviations below normal. The full conditional pricing tables for all months, covering both El Ni\~no and La Ni\~na, are available [ONLINE].
+
+
+\subsubsection{Result 1} 
+stochastic catalog
+
+\subsubsection{Result 2}
+Information is more important at some points than others
+
+
+
+\section{Application}
+\subsection{Key changes to make this operational}
+The prices in table \ref{tab:pricesOctSub} and [ONLINE] only reflect the underlying risk of the index. In actual transactions, these pure risk prices will generally be:
+\begin{itemize}
+\item adjusted (downward) to reflect the time value of the premium paid by hedgers;
+\item subjected to some margining\footnote{Margining refers to the process of setting aside collateral on financial trades. On exchange-traded derivatives there are clear, predictable rules for how much money must be set aside as collateral in a \emph{margin account} as the trade's settlement index changes over time.} rules, when applicable; and
+\item adjusted (upward) to allow for some reasonable expected profit for speculators.
+\end{itemize}
+
+\subsection{Understanding informational and monetary gains from better forecasts}
+
+\subsection{Remove best forecast and compare pricing with and without it. What is the earning opportunity?}
+
+\subsection{Alternatively: application of finding natural swaps}
+
+\section{Conclusion}
+
+\subsection{Key results summary}
+
+\subsubsection{Distributional properties – several assumptions seem to work}
+
+\paragraph{Normality assumption works well (and may have analytical benefits?)}
+
+\subsubsection{Information changes significantly and so motivates dynamic pricing}
+
+\paragraph{Inflection points and critical information}
+
+\paragraph{Identifying the magnitude of uncertainty and its pricing implications}
+
+\paragraph{IRI ensemble forecast can provide foundation for baseline}
+
+\subsection{Other necessary conditions for traded market}
+
+\subsection{Positive externalities}
+
+\subsubsection{Better climate models (O.J. futures example)}
+
+\bibliographystyle{dcu}
+\bibliography{References/references}
+
+\end{document}
+
+\subsubsection{Should government finance the startup?}
