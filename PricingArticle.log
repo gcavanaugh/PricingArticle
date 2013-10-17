@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 OCT 2013 19:09
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  16 OCT 2013 19:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,6 +426,15 @@ Package gensymb Info: Using \Omega for \ohm on input line 80.
 
 Package gensymb Warning: Not defining \micro.
 
+! Undefined control sequence.
+l.81 \morefloats
+                
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -520,31 +529,6 @@ Overfull \hbox (3.49039pt too wide) detected at line 462
  []
 
 (./Tables/regOfConditionalsTablemonth10.tex) [15]
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 16 undefined on in
-put line 489.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFsIllustrativeExamplesTradConfigFull
-' on page 16 undefined on input line 491.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFsIllustrativeExamplesTradConfigSimp
-le' on page 16 undefined on input line 491.
-
-
 <graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull.pdf, id
 =103, 578.16pt x 578.16pt>
 File: graphics/Pricingfigs/conditionalCDFsIllustrativeExamplesTradConfigFull.pd
@@ -596,54 +580,6 @@ c file (type pdf)
 
 LaTeX Warning: Float too large for page by 56.9516pt on input line 535.
 
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 537.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs04to06' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs07to09' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs10to12' on page 19 undefined on in
-put line 539.
-
-
-LaTeX Warning: Reference `fig:conditionalCDFs01to03' on page 19 undefined on in
-put line 539.
-
 (./Tables/conditionalsLNTablemonth10sub.tex)
 Missing character: There is no â in font cmbx10!
 Missing character: There is no € in font cmbx10!
@@ -655,39 +591,33 @@ Missing character: There is no “ in font cmbx10!
 Overfull \vbox (36.52011pt too high) has occurred while \output is active []
 
 
-[24] (./PricingArticle.bbl [25]) [26] (./PricingArticle.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[24] (./PricingArticle.bbl [25]) [26] (./PricingArticle.aux) ) 
 Here is how much of TeX's memory you used:
- 4386 strings out of 493747
- 62350 string characters out of 3143546
- 236468 words of memory out of 3000000
- 7537 multiletter control sequences out of 15000+200000
+ 4384 strings out of 493747
+ 62291 string characters out of 3143546
+ 236506 words of memory out of 3000000
+ 7535 multiletter control sequences out of 15000+200000
  17802 words of font info for 65 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  38i,11n,32p,1110b,237s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/l
-ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loc
-al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local
-/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/t
-exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texl
-ive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
-10/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/201
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2010/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2010/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on PricingArticle.pdf (26 pages, 2078582 bytes).
+</usr/local/texli
+ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texliv
+e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive
+/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
+2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/20
+10/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2010
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2010/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2010/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2010/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2010/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2010/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2010/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2010/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmti8.pfb>
+Output written on PricingArticle.pdf (26 pages, 2078399 bytes).
 PDF statistics:
  233 PDF objects out of 1000 (max. 8388607)
  162 compressed objects within 2 object streams
