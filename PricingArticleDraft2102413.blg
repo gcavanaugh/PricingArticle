@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: PricingArticleDraft2102413.aux
+Case mismatch error between cite keys khalil2007Nino and khalil2007nino
+---line 49 of file PricingArticleDraft2102413.aux
+ : \citation{khalil2007Nino
+ :                         }
+I'm skipping whatever remains of this command
+The style file: dcu.bst
+Database file #1: References/references.bib
+You've used 39 entries,
+            2921 wiz_defined-function locations,
+            866 strings with 10816 characters,
+and the built_in function-call counts, 165061 in all, are:
+= -- 27104
+> -- 1997
+< -- 0
++ -- 12815
+- -- 602
+* -- 14206
+:= -- 33149
+add.period$ -- 79
+call.type$ -- 39
+change.case$ -- 546
+chr.to.int$ -- 39
+cite$ -- 39
+duplicate$ -- 542
+empty$ -- 1217
+format.name$ -- 750
+if$ -- 29622
+int.to.chr$ -- 5
+int.to.str$ -- 0
+missing$ -- 36
+newline$ -- 161
+num.names$ -- 404
+pop$ -- 105
+preamble$ -- 1
+purify$ -- 585
+quote$ -- 0
+skip$ -- 521
+stack$ -- 0
+substring$ -- 38316
+swap$ -- 81
+text.length$ -- 546
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 150
+warning$ -- 0
+while$ -- 871
+width$ -- 0
+write$ -- 533
+(There was 1 error message)
